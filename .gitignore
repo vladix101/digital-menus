@@ -1,0 +1,12 @@
+# Editor
+.idea/
+.vscode/
+*.suo
+*.sw?
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

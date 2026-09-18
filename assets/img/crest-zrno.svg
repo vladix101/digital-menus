@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Znak kafeterije Zrno">
+  <circle cx="60" cy="60" r="56" fill="none" stroke="#e8d3a2" stroke-width="2"/>
+  <circle cx="60" cy="60" r="49" fill="none" stroke="#e8d3a2" stroke-width=".8" opacity=".55"/>
+  <g transform="translate(60 58)">
+    <ellipse rx="26" ry="18" fill="none" stroke="#e8d3a2" stroke-width="2.4"/>
+    <path d="M-22 0c9-11 35-11 44 0-9 11-35 11-44 0z" fill="none" stroke="#e8d3a2" stroke-width="2.4"/>
+  </g>
+  <text x="60" y="98" text-anchor="middle" font-family="Georgia, serif" font-size="14" letter-spacing="5" fill="#e8d3a2">ZRNO</text>
+</svg>

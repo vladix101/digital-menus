@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kafeterija Zrno — meni</title>
+  <meta name="description" content="Meni kafeterije i pržionice Zrno, Niš — filter kafa, espresso, domaći kolači i doručak.">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <meta property="og:title" content="Kafeterija Zrno — meni">
+  <meta property="og:type" content="website">
+</head>
+<body>
+
+<header class="hero">
+  <div class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/">
+        <img class="brand__mark" src="/assets/img/logo.svg" alt="" width="38" height="38">
+        <span class="brand__name">MENI<span>KA</span></span>
+      </a>
+      <a class="header-link" href="/">Svi lokali</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="menu-hero__inner">
+      <img class="venue-crest" src="/assets/img/crest-zrno.svg" alt="" width="104" height="104">
+      <div>
+        <p class="eyebrow">Niš · Kafeterija i pržionica</p>
+        <h1 class="menu-hero__title">Kafeterija Zrno</h1>
+        <p class="menu-hero__sub">
+          Radno vreme <b>07–20 h</b> &nbsp;·&nbsp; Obrenovićeva 14 &nbsp;·&nbsp; Cene su u dinarima (RSD)
+        </p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="catnav" data-catnav aria-label="Kategorije menija"></nav>
+
+<main class="menu-body wrap" data-menu-body>
+  <noscript>
+    <p>Za prikaz menija potreban je uključen JavaScript. Pozovite nas na
+      <a href="tel:+381180000000">+381 18 000 0000</a>.</p>
+  </noscript>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="info-grid">
+      <div>
+        <h3>Adresa</h3>
+        <p>Obrenovićeva 14, Niš</p>
+      </div>
+      <div>
+        <h3>Telefon</h3>
+        <p><a href="tel:+381180000000">+381 18 000 0000</a></p>
+      </div>
+      <div>
+        <h3>Radno vreme</h3>
+        <p>Radnim danima 07–20 h, vikendom 08–20 h</p>
+      </div>
+      <div>
+        <h3>Zrno za kući</h3>
+        <p>Pržimo utorkom i petkom. Pakovanje 250 g dostupno na kasi.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Alergeni i sastojci dostupni na upit kod osoblja.</span>
+      <a href="/">Svi lokali na Menika</a>
+    </div>
+  </div>
+</footer>
+
+<script type="application/json" id="menu-data">
+{
+  "sections": [
+    {
+      "title": "Espresso bar",
+      "note": "Mešavina kuće: Brazil i Etiopija",
+      "items": [
+        { "name": "Espresso", "desc": "Čokolada, lešnik, blaga kiselost.", "size": "30 ml", "price": 170 },
+        { "name": "Doppio", "size": "60 ml", "price": 220 },
+        { "name": "Cortado", "desc": "Espresso i malo pare mleka.", "size": "90 ml", "price": 230 },
+        { "name": "Flat white", "desc": "Dupli espresso i svilenkasta pena.", "size": "180 ml", "price": 300, "tags": ["preporuka"] },
+        { "name": "Cappuccino", "size": "180 ml", "price": 280 },
+        { "name": "Latte", "size": "250 ml", "price": 300 },
+        { "name": "Mocha", "desc": "Espresso, tamna čokolada, mleko.", "size": "250 ml", "price": 340 },
+        { "name": "Biljno mleko", "desc": "Ovseno, bademovo ili sojino.", "price": 60 }
+      ]
+    },
+    {
+      "title": "Filter kafa",
+      "note": "Pitajte za zrno nedelje",
+      "items": [
+        { "name": "V60", "desc": "Ručno prelivena, jedna šolja.", "size": "250 ml", "price": 330, "tags": ["preporuka"] },
+        { "name": "Chemex", "desc": "Za dvoje, čist i bistar ukus.", "size": "500 ml", "price": 560 },
+        { "name": "Aeropress", "desc": "Punije telo, kraća ekstrakcija.", "size": "220 ml", "price": 320 },
+        { "name": "Cold brew", "desc": "Hladno ekstrahovana 18 sati.", "size": "300 ml", "price": 360 },
+        { "name": "Batch brew", "desc": "Kafa dana iz aparata, uz dopunu.", "size": "300 ml", "price": 260 }
+      ]
+    },
+    {
+      "title": "Čaj i ostalo",
+      "items": [
+        { "name": "Matcha latte", "desc": "Ceremonijalna matcha i mleko po izboru.", "size": "250 ml", "price": 380, "tags": ["novo"] },
+        { "name": "Chai latte", "desc": "Crni čaj sa začinima i mlekom.", "size": "250 ml", "price": 350 },
+        { "name": "Čaj u listu", "desc": "Zeleni, crni, rooibos ili biljni.", "size": "350 ml", "price": 240 },
+        { "name": "Topla čokolada", "size": "200 ml", "price": 320 },
+        { "name": "Limunada", "desc": "Sveže ceđena, sa nanom.", "size": "400 ml", "price": 300 },
+        { "name": "Voda", "size": "0,33 l", "price": 140 }
+      ]
+    },
+    {
+      "title": "Doručak",
+      "note": "Služimo do 12 h",
+      "items": [
+        { "name": "Kroasan", "desc": "Puter kroasan iz lokalne pekare.", "price": 220 },
+        { "name": "Tost sa avokadom", "desc": "Kiselo testo, avokado, poširano jaje, čili.", "price": 680, "tags": ["preporuka"] },
+        { "name": "Kajgana", "desc": "Tri jajeta, hleb od kiselog testa, salata.", "price": 560 },
+        { "name": "Granola i jogurt", "desc": "Domaća granola, grčki jogurt, sezonsko voće.", "price": 520 },
+        { "name": "Sendvič sa pršutom", "desc": "Pršut, kremasti sir, rukola.", "price": 620 }
+      ]
+    },
+    {
+      "title": "Kolači",
+      "items": [
+        { "name": "Kolač dana", "desc": "Pitajte šta je danas pečeno.", "price": 320, "tags": ["preporuka"] },
+        { "name": "Čizkejk", "desc": "Njujorški, sa sosom od višanja.", "price": 420 },
+        { "name": "Banana bread", "desc": "Sa orasima, blago zagrejan.", "price": 300 },
+        { "name": "Brownie", "desc": "Tamna čokolada 70%, bez brašna.", "price": 350, "tags": ["bez glutena"] },
+        { "name": "Cookie", "desc": "Sa komadima čokolade.", "price": 240 }
+      ]
+    },
+    {
+      "title": "Zrno za kući",
+      "note": "Pakovanje 250 g",
+      "items": [
+        { "name": "Mešavina kuće", "desc": "Espresso pečenje, Brazil i Etiopija.", "size": "250 g", "price": 1100 },
+        { "name": "Etiopija Yirgacheffe", "desc": "Filter pečenje, jasmin i limun.", "size": "250 g", "price": 1450 },
+        { "name": "Kolumbija Huila", "desc": "Filter pečenje, karamela i crveno voće.", "size": "250 g", "price": 1350 },
+        { "name": "Mlevenje", "desc": "Meljemo po vašem aparatu.", "price": "gratis" }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/assets/js/menu.js" defer></script>
+
+</body>
+</html>

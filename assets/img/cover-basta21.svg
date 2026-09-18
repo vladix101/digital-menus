@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Bašta u sumrak sa svetlima i pergolom">
+  <defs>
+    <linearGradient id="b21-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b1f16"/>
+      <stop offset=".55" stop-color="#6b431f"/>
+      <stop offset="1" stop-color="#c98b3c"/>
+    </linearGradient>
+    <radialGradient id="b21-glow" cx=".5" cy=".95" r=".7">
+      <stop offset="0" stop-color="#f2c777" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#f2c777" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#b21-sky)"/>
+  <rect width="800" height="500" fill="url(#b21-glow)"/>
+
+  <!-- daleka linija zelenila -->
+  <path d="M0 330c60-24 110 4 158-12s84-40 140-30 92 46 150 34 108-44 160-28 130 30 192 18v148H0z" fill="#241a12" opacity=".65"/>
+
+  <!-- pergola -->
+  <g stroke="#1a120c" stroke-width="10" stroke-linecap="round" opacity=".9">
+    <path d="M70 60v300M730 60v300"/>
+    <path d="M40 78h720"/>
+  </g>
+  <g stroke="#1a120c" stroke-width="6" opacity=".75">
+    <path d="M150 78v34M250 78v34M350 78v34M450 78v34M550 78v34M650 78v34"/>
+  </g>
+
+  <!-- lampice -->
+  <path d="M40 92q180 76 360 0t360 0" fill="none" stroke="#1a120c" stroke-width="3"/>
+  <g fill="#ffd591">
+    <circle cx="130" cy="126" r="7"/><circle cx="230" cy="146" r="7"/>
+    <circle cx="330" cy="154" r="7"/><circle cx="430" cy="152" r="7"/>
+    <circle cx="530" cy="140" r="7"/><circle cx="630" cy="118" r="7"/>
+  </g>
+  <g fill="#ffd591" opacity=".25">
+    <circle cx="130" cy="126" r="20"/><circle cx="230" cy="146" r="20"/>
+    <circle cx="330" cy="154" r="20"/><circle cx="430" cy="152" r="20"/>
+    <circle cx="530" cy="140" r="20"/><circle cx="630" cy="118" r="20"/>
+  </g>
+
+  <!-- lišće u prvom planu -->
+  <g fill="#17110d" opacity=".9">
+    <path d="M0 500V300c46 10 74 46 78 96s-12 82-12 104z"/>
+    <path d="M800 500V280c-58 16-92 58-96 116s16 78 16 104z"/>
+  </g>
+
+  <!-- sto sa šoljom -->
+  <g transform="translate(360 352)">
+    <ellipse cx="40" cy="106" rx="150" ry="20" fill="#120d09" opacity=".55"/>
+    <rect x="-90" y="66" width="260" height="14" rx="7" fill="#2f2118"/>
+    <rect x="-60" y="80" width="10" height="46" fill="#241a12"/>
+    <rect x="130" y="80" width="10" height="46" fill="#241a12"/>
+    <path d="M6 30h54v18a27 27 0 0 1-54 0z" fill="#f7f2e9"/>
+    <rect x="-8" y="60" width="86" height="7" rx="3.5" fill="#e3d9c8"/>
+    <path d="M60 34h9a9 9 0 0 1 0 18h-9" fill="none" stroke="#f7f2e9" stroke-width="5"/>
+    <g fill="none" stroke="#f7f2e9" stroke-width="3" stroke-linecap="round" opacity=".6">
+      <path d="M22 22c5-5 5-10 0-15"/>
+      <path d="M40 18c6-6 6-12 0-18"/>
+    </g>
+  </g>
+</svg>

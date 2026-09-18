@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bašta 21 — meni</title>
+  <meta name="description" content="Meni kafea i letnje bašte Bašta 21, Novi Sad — kafa, koktela, pivo, vino i laka hrana.">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <meta property="og:title" content="Bašta 21 — meni">
+  <meta property="og:type" content="website">
+</head>
+<body>
+
+<header class="hero">
+  <div class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/">
+        <img class="brand__mark" src="/assets/img/logo.svg" alt="" width="38" height="38">
+        <span class="brand__name">MENI<span>KA</span></span>
+      </a>
+      <a class="header-link" href="/">Svi lokali</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="menu-hero__inner">
+      <img class="venue-crest" src="/assets/img/crest-basta21.svg" alt="" width="104" height="104">
+      <div>
+        <p class="eyebrow">Novi Sad · Kafe &amp; bar</p>
+        <h1 class="menu-hero__title">Bašta 21</h1>
+        <p class="menu-hero__sub">
+          Radno vreme <b>08–01 h</b> &nbsp;·&nbsp; Zmaj Jovina 21 &nbsp;·&nbsp; Cene su u dinarima (RSD)
+        </p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="catnav" data-catnav aria-label="Kategorije menija"></nav>
+
+<main class="menu-body wrap" data-menu-body>
+  <noscript>
+    <p>Za prikaz menija potreban je uključen JavaScript. Pozovite nas na
+      <a href="tel:+381210000000">+381 21 000 0000</a> i rado ćemo vam pročitati ponudu.</p>
+  </noscript>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="info-grid">
+      <div>
+        <h3>Adresa</h3>
+        <p>Zmaj Jovina 21, Novi Sad</p>
+      </div>
+      <div>
+        <h3>Rezervacije</h3>
+        <p><a href="tel:+381210000000">+381 21 000 0000</a></p>
+      </div>
+      <div>
+        <h3>Radno vreme</h3>
+        <p>Ponedeljak – nedelja, 08–01 h</p>
+      </div>
+      <div>
+        <h3>Wi-Fi</h3>
+        <p>mreža <b>Basta21</b> · lozinka <b>kafa2021</b></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Alergeni i sastojci dostupni na upit kod osoblja.</span>
+      <a href="/">Svi lokali na Menika</a>
+    </div>
+  </div>
+</footer>
+
+<script type="application/json" id="menu-data">
+{
+  "sections": [
+    {
+      "title": "Kafa",
+      "note": "Zrno: espresso mešavina 80% arabika",
+      "items": [
+        { "name": "Espresso", "desc": "Jednostruki, sa čašom vode.", "size": "30 ml", "price": 180 },
+        { "name": "Espresso doppio", "desc": "Dupla doza za duži razgovor.", "size": "60 ml", "price": 240 },
+        { "name": "Macchiato", "desc": "Espresso sa kapom mlečne pene.", "size": "40 ml", "price": 200 },
+        { "name": "Cappuccino", "desc": "Klasičan odnos kafe i mleka.", "size": "180 ml", "price": 280, "tags": ["preporuka"] },
+        { "name": "Caffè latte", "desc": "Blago, sa puno mleka.", "size": "250 ml", "price": 300 },
+        { "name": "Domaća kafa", "desc": "Kuvana u džezvi, uz ratluk.", "size": "60 ml", "price": 190 },
+        { "name": "Ledena kafa", "desc": "Espresso, mleko, led i sirup po izboru.", "size": "300 ml", "price": 340, "tags": ["leto"] },
+        { "name": "Biljno mleko", "desc": "Zamena u bilo kom napitku: bademovo, ovseno ili sojino.", "price": 60 }
+      ]
+    },
+    {
+      "title": "Čaj i topli napici",
+      "items": [
+        { "name": "Crni čaj", "desc": "Earl Grey, uz limun i med.", "size": "300 ml", "price": 220 },
+        { "name": "Zeleni čaj", "desc": "Sencha, blago travnat.", "size": "300 ml", "price": 220 },
+        { "name": "Nana i limun", "desc": "Sveža nana, limun, med.", "size": "300 ml", "price": 250 },
+        { "name": "Topla čokolada", "desc": "Gusta, sa tamnom čokoladom 55%.", "size": "200 ml", "price": 320 }
+      ]
+    },
+    {
+      "title": "Bezalkoholna pića",
+      "items": [
+        { "name": "Domaća limunada", "desc": "Limun, nana, đumbir, malo meda.", "size": "400 ml", "price": 320, "tags": ["preporuka"] },
+        { "name": "Ceđena pomorandža", "desc": "Cedi se po porudžbini.", "size": "250 ml", "price": 360 },
+        { "name": "Gazirana pića", "desc": "Cola, Cola zero, Fanta, Sprite, tonik.", "size": "0,25 l", "price": 220 },
+        { "name": "Voda", "price": [ { "label": "0,33 l", "value": 150 }, { "label": "0,75 l", "value": 260 } ] },
+        { "name": "Bezalkoholno pivo", "size": "0,33 l", "price": 280 }
+      ]
+    },
+    {
+      "title": "Koktela",
+      "note": "Miksuju se od 17 h",
+      "items": [
+        { "name": "Aperol spritz", "desc": "Aperol, prosecco, soda, pomorandža.", "size": "250 ml", "price": 560, "tags": ["preporuka"] },
+        { "name": "Mojito", "desc": "Beli rum, nana, limeta, trska šećer, soda.", "size": "300 ml", "price": 580 },
+        { "name": "Gin tonic", "desc": "Gin, tonik, grejpfrut i biber u zrnu.", "size": "300 ml", "price": 600 },
+        { "name": "Negroni", "desc": "Gin, campari, crveni vermut.", "size": "150 ml", "price": 620 },
+        { "name": "Espresso martini", "desc": "Votka, sveži espresso, liker od kafe.", "size": "150 ml", "price": 640, "tags": ["novo"] },
+        { "name": "Bezalkoholni spritz", "desc": "Gorki sirup, soda, pomorandža.", "size": "250 ml", "price": 380 }
+      ]
+    },
+    {
+      "title": "Pivo i vino",
+      "items": [
+        { "name": "Točeno pivo", "desc": "Lager iz lokalne pivare.", "price": [ { "label": "0,3 l", "value": 260 }, { "label": "0,5 l", "value": 340 } ] },
+        { "name": "Pivo u flaši", "desc": "Domaći i uvozni lager, IPA, pšenično.", "size": "0,33 l", "price": 320 },
+        { "name": "Vino na čašu", "desc": "Belo, rose ili crveno, po izboru kuće.", "size": "0,2 l", "price": 380 },
+        { "name": "Vino flaša", "desc": "Karta vina dostupna kod osoblja.", "size": "0,75 l", "price": 1800 },
+        { "name": "Rakija", "desc": "Šljiva, dunja, kajsija, viljamovka.", "size": "0,03 l", "price": 260 }
+      ]
+    },
+    {
+      "title": "Za pojesti",
+      "note": "Kuhinja radi do 23 h",
+      "items": [
+        { "name": "Bruskete sa paradajzom", "desc": "Pečeni hleb, paradajz, bosiljak, maslinovo ulje.", "price": 420, "tags": ["posno"] },
+        { "name": "Klub sendvič", "desc": "Piletina, slanina, jaje, paradajz, uz pomfrit.", "price": 720, "tags": ["preporuka"] },
+        { "name": "Ćezar salata", "desc": "Zelena salata, piletina, parmezan, krutoni.", "price": 680 },
+        { "name": "Pljeskavica u lepinji", "desc": "200 g, uz kajmak i pavlaku.", "price": 690 },
+        { "name": "Pomfrit", "desc": "Uz aioli ili kečap.", "price": 320, "tags": ["posno"] },
+        { "name": "Daska sa sirevima", "desc": "Četiri sira, orasi, med, domaći hleb. Za dvoje.", "price": 1250 }
+      ]
+    },
+    {
+      "title": "Slatko",
+      "items": [
+        { "name": "Čizkejk", "desc": "Sa šumskim voćem.", "price": 420 },
+        { "name": "Palačinke", "desc": "Dve, sa plazmom, eurokremom ili džemom.", "price": 380 },
+        { "name": "Domaći kolač dana", "desc": "Pitajte osoblje šta je danas iz rerne.", "price": 350, "tags": ["preporuka"] },
+        { "name": "Sladoled", "desc": "Tri kugle po izboru.", "price": 330 }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/assets/js/menu.js" defer></script>
+
+</body>
+</html>

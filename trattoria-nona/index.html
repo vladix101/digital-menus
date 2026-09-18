@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trattoria Nona — meni</title>
+  <meta name="description" content="Meni restorana Trattoria Nona, Beograd — antipasti, testenine, pice iz peći na drva i dezerti.">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <meta property="og:title" content="Trattoria Nona — meni">
+  <meta property="og:type" content="website">
+</head>
+<body>
+
+<header class="hero">
+  <div class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/">
+        <img class="brand__mark" src="/assets/img/logo.svg" alt="" width="38" height="38">
+        <span class="brand__name">MENI<span>KA</span></span>
+      </a>
+      <a class="header-link" href="/">Svi lokali</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="menu-hero__inner">
+      <img class="venue-crest" src="/assets/img/crest-trattoria-nona.svg" alt="" width="104" height="104">
+      <div>
+        <p class="eyebrow">Beograd · Italijanski restoran</p>
+        <h1 class="menu-hero__title">Trattoria Nona</h1>
+        <p class="menu-hero__sub">
+          Radno vreme <b>12–24 h</b> &nbsp;·&nbsp; Gospodar Jevremova 8 &nbsp;·&nbsp; Cene su u dinarima (RSD)
+        </p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="catnav" data-catnav aria-label="Kategorije menija"></nav>
+
+<main class="menu-body wrap" data-menu-body>
+  <noscript>
+    <p>Za prikaz menija potreban je uključen JavaScript. Za rezervaciju i ponudu pozovite
+      <a href="tel:+381110000000">+381 11 000 0000</a>.</p>
+  </noscript>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="info-grid">
+      <div>
+        <h3>Adresa</h3>
+        <p>Gospodar Jevremova 8, Beograd</p>
+      </div>
+      <div>
+        <h3>Rezervacije</h3>
+        <p><a href="tel:+381110000000">+381 11 000 0000</a></p>
+      </div>
+      <div>
+        <h3>Radno vreme</h3>
+        <p>Utorak – nedelja, 12–24 h</p>
+      </div>
+      <div>
+        <h3>Napomena</h3>
+        <p>Testenine mesimo svakog jutra. Bezglutenska varijanta uz doplatu.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Alergeni i sastojci dostupni na upit kod osoblja.</span>
+      <a href="/">Svi lokali na Menika</a>
+    </div>
+  </div>
+</footer>
+
+<script type="application/json" id="menu-data">
+{
+  "sections": [
+    {
+      "title": "Antipasti",
+      "note": "Predjela za deljenje",
+      "items": [
+        { "name": "Bruschette miste", "desc": "Četiri komada: paradajz, pečena paprika, pašteta od maslina, pršut.", "price": 690, "tags": ["preporuka"] },
+        { "name": "Caprese", "desc": "Bivolja mocarela, paradajz, bosiljak, maslinovo ulje.", "price": 820 },
+        { "name": "Tagliere della Nona", "desc": "Daska sa pršutom, salamom, sirevima i turšijom. Za dvoje.", "price": 1650 },
+        { "name": "Vitello tonnato", "desc": "Tanko sečena teletina u kremu od tunjevine i kapara.", "price": 980 },
+        { "name": "Carpaccio di manzo", "desc": "Junetina, rukola, parmezan, limun.", "price": 1050 }
+      ]
+    },
+    {
+      "title": "Supe i salate",
+      "items": [
+        { "name": "Minestrone", "desc": "Gusta supa od sezonskog povrća.", "price": 480, "tags": ["posno"] },
+        { "name": "Zuppa di pomodoro", "desc": "Krem supa od pečenog paradajza i bosiljka.", "price": 460 },
+        { "name": "Insalata mista", "desc": "Sezonsko zelenilo, paradajz, krastavac, dresing od vinskog sirćeta.", "price": 520, "tags": ["posno"] },
+        { "name": "Insalata di rucola", "desc": "Rukola, kruška, orasi, gorgonzola.", "price": 690 }
+      ]
+    },
+    {
+      "title": "Paste",
+      "note": "Sveže mešene svakog jutra",
+      "items": [
+        { "name": "Tagliatelle al ragù", "desc": "Sporo kuvan ragù od junetine, osam sati.", "price": 1180, "tags": ["preporuka"] },
+        { "name": "Spaghetti cacio e pepe", "desc": "Pecorino i crni biber, ništa više.", "price": 980 },
+        { "name": "Ravioli di ricotta", "desc": "Punjeni rikotom i spanaćem, žalfija i puter.", "price": 1120 },
+        { "name": "Linguine alle vongole", "desc": "Školjke, belo vino, beli luk, peršun.", "price": 1420 },
+        { "name": "Lasagne della casa", "desc": "Klasične, sa bešamelom i parmezanom.", "price": 1090 },
+        { "name": "Gnocchi al gorgonzola", "desc": "Domaći njoki u kremu od gorgonzole i oraha.", "price": 1050 }
+      ]
+    },
+    {
+      "title": "Pica iz peći na drva",
+      "note": "Prečnik 32 cm",
+      "items": [
+        { "name": "Margherita", "desc": "Paradajz, fior di latte, bosiljak.", "price": 820, "tags": ["posno"] },
+        { "name": "Diavola", "desc": "Ljuta salama, paradajz, mocarela, origano.", "price": 1050 },
+        { "name": "Quattro formaggi", "desc": "Mocarela, gorgonzola, pecorino, dimljeni sir.", "price": 1120 },
+        { "name": "Prosciutto e funghi", "desc": "Pršut, pečurke, mocarela.", "price": 1090 },
+        { "name": "Nona", "desc": "Pršut, rukola, parmezan, kapi balzamika.", "price": 1250, "tags": ["preporuka"] },
+        { "name": "Bezglutensko testo", "desc": "Zamena testa na bilo kojoj pici.", "price": 250 }
+      ]
+    },
+    {
+      "title": "Glavna jela",
+      "items": [
+        { "name": "Pollo alla cacciatora", "desc": "Piletina u sosu od paradajza, maslina i ruzmarina, uz polentu.", "price": 1350 },
+        { "name": "Scaloppine al limone", "desc": "Teleći odresci u sosu od limuna, uz krompir.", "price": 1580 },
+        { "name": "Branzino al forno", "desc": "Cela brancin riba iz peći, uz blitvu.", "price": 1750, "tags": ["preporuka"] },
+        { "name": "Bistecca", "desc": "Junaći ramstek 300 g, ruzmarin, morska so.", "price": 2450 }
+      ]
+    },
+    {
+      "title": "Dolci",
+      "items": [
+        { "name": "Tiramisù", "desc": "Po receptu bake Nona, sa mascarpone kremom.", "price": 520, "tags": ["preporuka"] },
+        { "name": "Panna cotta", "desc": "Sa sosom od šumskog voća.", "price": 480 },
+        { "name": "Cannoli siciliani", "desc": "Dva komada, rikota i kandirana kora pomorandže.", "price": 540 },
+        { "name": "Affogato", "desc": "Sladoled od vanile preliven espressom.", "price": 420 }
+      ]
+    },
+    {
+      "title": "Vino i piće",
+      "note": "Puna karta vina kod osoblja",
+      "items": [
+        { "name": "Vino kuće", "desc": "Belo ili crveno.", "price": [ { "label": "0,2 l", "value": 420 }, { "label": "0,75 l", "value": 1900 } ] },
+        { "name": "Prosecco", "size": "0,1 l", "price": 490 },
+        { "name": "Aperol spritz", "size": "250 ml", "price": 590 },
+        { "name": "Pivo", "desc": "Domaće i italijansko.", "size": "0,33 l", "price": 330 },
+        { "name": "Espresso", "size": "30 ml", "price": 190 },
+        { "name": "Voda", "price": [ { "label": "0,33 l", "value": 160 }, { "label": "0,75 l", "value": 280 } ] }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/assets/js/menu.js" defer></script>
+
+</body>
+</html>

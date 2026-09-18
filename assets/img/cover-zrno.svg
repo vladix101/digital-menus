@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Šolja kafe sa latte art crtežom, pogled odozgo">
+  <defs>
+    <linearGradient id="zr-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#241a12"/>
+      <stop offset="1" stop-color="#3f2c1c"/>
+    </linearGradient>
+    <radialGradient id="zr-crema" cx=".42" cy=".38" r=".62">
+      <stop offset="0" stop-color="#c58a4d"/>
+      <stop offset="1" stop-color="#8a5526"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#zr-bg)"/>
+
+  <!-- daske stola -->
+  <g stroke="#17110d" stroke-width="2" opacity=".45">
+    <path d="M0 110h800M0 250h800M0 390h800"/>
+  </g>
+
+  <!-- zrna kafe -->
+  <g fill="#1d1309">
+    <g transform="translate(96 96) rotate(-24)">
+      <ellipse rx="22" ry="15" fill="#3b2415"/>
+      <path d="M-19 0c8-9 30-9 38 0-8 9-30 9-38 0z" fill="#1d1309"/>
+    </g>
+    <g transform="translate(700 130) rotate(34)">
+      <ellipse rx="20" ry="14" fill="#3b2415"/>
+      <path d="M-17 0c7-8 27-8 34 0-7 8-27 8-34 0z" fill="#1d1309"/>
+    </g>
+    <g transform="translate(138 408) rotate(12)">
+      <ellipse rx="19" ry="13" fill="#3b2415"/>
+      <path d="M-16 0c7-8 25-8 32 0-7 8-25 8-32 0z" fill="#1d1309"/>
+    </g>
+    <g transform="translate(664 398) rotate(-40)">
+      <ellipse rx="23" ry="16" fill="#3b2415"/>
+      <path d="M-20 0c8-9 32-9 40 0-8 9-32 9-40 0z" fill="#1d1309"/>
+    </g>
+    <g transform="translate(596 62) rotate(8)">
+      <ellipse rx="16" ry="11" fill="#3b2415"/>
+      <path d="M-13 0c6-7 20-7 26 0-6 7-20 7-26 0z" fill="#1d1309"/>
+    </g>
+  </g>
+
+  <!-- tacna i šolja odozgo -->
+  <circle cx="400" cy="250" r="206" fill="#0f0b07" opacity=".45"/>
+  <circle cx="400" cy="250" r="196" fill="#f7f2e9"/>
+  <circle cx="400" cy="250" r="186" fill="none" stroke="#e3d9c8" stroke-width="2"/>
+  <circle cx="400" cy="250" r="146" fill="#fffcf6"/>
+  <circle cx="400" cy="250" r="132" fill="url(#zr-crema)"/>
+
+  <!-- latte art: list -->
+  <g fill="#f4e7d4">
+    <path d="M400 130c-30 34-44 66-44 96 0 26 16 48 44 76 28-28 44-50 44-76 0-30-14-62-44-96z" opacity=".95"/>
+    <path d="M400 150c-18 30-26 54-26 74 0 20 10 38 26 58 16-20 26-38 26-58 0-20-8-44-26-74z" fill="#c58a4d" opacity=".35"/>
+  </g>
+  <path d="M400 302c0 34 10 56 28 74" fill="none" stroke="#f4e7d4" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- kašičica -->
+  <g transform="translate(628 268) rotate(18)">
+    <ellipse rx="22" ry="30" fill="#cfc6b6"/>
+    <rect x="-6" y="26" width="12" height="118" rx="6" fill="#cfc6b6"/>
+  </g>
+</svg>
