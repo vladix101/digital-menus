@@ -1,0 +1,124 @@
+/* ==========================================================================
+   Trattoria Nona — svetla editorijalna tema: zaglavlje na boji slonovače,
+   terakota akcenat, Cormorant Garamond kroz celu stranu, podvučena
+   navigacija umesto pilula i cene bez tačkastog vodiča.
+   ========================================================================== */
+
+:root {
+  --bg:          #fbf8f3;
+  --text:        #2b2622;
+  --muted:       #857a6e;
+  --line:        #e2dad0;
+  --accent:      #a8452c;
+
+  --hero-bg:     #f3ece1;
+  --hero-text:   #2b2622;
+  --hero-accent: #a8452c;
+  --hero-muted:  #7b7065;
+
+  /* Podnožje je jedina tamna površina — zatvara stranu. */
+  --footer-bg:     #2f2a24;
+  --footer-text:   #f6f1e8;
+  --footer-muted:  rgb(246 241 232 / 72%);
+  --footer-accent: #d9a58c;
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Karla", system-ui, sans-serif;
+  --font-price: "Cormorant Garamond", Georgia, serif;
+  --price-weight: 700;
+
+  --wrap: 980px;
+  --pill: 0;
+}
+
+/* Tanka dvostruka linija na dnu zaglavlja. */
+.venue-hero {
+  border-bottom: 1px solid var(--line);
+  box-shadow: inset 0 -5px 0 -4px var(--line);
+}
+
+.venue-hero__inner { padding-block: clamp(2.5rem, 8vw, 4rem); }
+
+.venue-crest { opacity: .95; }
+
+.venue-hero__kicker {
+  font-size: .68rem;
+  letter-spacing: .34em;
+  color: var(--accent);
+}
+
+.venue-hero__name {
+  font-size: clamp(2.6rem, 9vw, 4.4rem);
+  font-weight: 500;
+  letter-spacing: .01em;
+}
+
+.venue-hero__meta {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1rem, 2.4vw, 1.15rem);
+}
+
+/* Navigacija: podvlačenje umesto pilula. */
+.catnav { border-bottom: 1px solid var(--line); }
+
+.catnav__list a {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  padding: .3rem .1rem;
+  margin-inline: .5rem;
+  border: 0;
+  border-bottom: 1px solid transparent;
+}
+
+.catnav__list a:hover { border-bottom-color: var(--muted); }
+
+.catnav__list a[aria-current="true"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  background: none;
+}
+
+/* Naslovi sekcija: veliki, centrirani, sa terakota brojem reda. */
+.menu-section__head {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: .3rem;
+  margin-bottom: 1.75rem;
+}
+
+.menu-section__title {
+  font-size: clamp(1.9rem, 5vw, 2.6rem);
+  font-weight: 500;
+  letter-spacing: .01em;
+}
+
+.menu-section__note {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: .98rem;
+  text-align: center;
+}
+
+/* Bez tačkastog vodiča — cena se drži desne ivice. */
+.item__dots { background: none; }
+
+.item__name { font-size: 1.2rem; font-weight: 500; }
+
+.item__price { font-size: 1.15rem; color: var(--accent); }
+
+.item__desc { font-size: .87rem; }
+
+.badge {
+  font-family: var(--font-body);
+  font-size: .64rem;
+  letter-spacing: .12em;
+  border-radius: 0;
+  border-color: var(--line);
+}
+
+.badge--star { color: var(--accent); background: rgb(168 69 44 / 7%); }
+
+.to-top { border-radius: 50%; }

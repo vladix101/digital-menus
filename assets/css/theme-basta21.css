@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Bašta 21 — topla klasika: espresso tamno zaglavlje, zlatni akcenat,
+   serif naslovi, zaobljene pilule i tačkasti vodič do cene.
+   ========================================================================== */
+
+:root {
+  --bg:          #faf6ee;
+  --text:        #211a14;
+  --muted:       #7a6b5b;
+  --line:        #e6dccb;
+  --accent:      #8f6a1d;
+
+  --hero-bg:     #17110d;
+  --hero-text:   #faf6ee;
+  --hero-accent: #e9d6a8;
+  --hero-muted:  rgb(250 246 238 / 70%);
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+/* Topli sjaj iza imena lokala. */
+.venue-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(36rem 19rem at 50% -20%, rgb(176 132 44 / 38%), transparent 65%),
+    radial-gradient(28rem 17rem at 12% 120%, rgb(176 132 44 / 16%), transparent 70%);
+}
+
+/* Zlatna nit na dnu zaglavlja. */
+.venue-hero::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--hero-accent), transparent);
+}
+
+.venue-crest {
+  border-radius: 50%;
+  border: 1px solid rgb(233 214 168 / 35%);
+  padding: .55rem;
+  background: rgb(255 255 255 / 4%);
+}
+
+.venue-hero__name { letter-spacing: -0.015em; }
+
+.catnav__list a[aria-current="true"] {
+  background: rgb(143 106 29 / 11%);
+  border-color: rgb(233 214 168 / 90%);
+}
+
+/* Zlatna crtica ispod naslova sekcije. */
+.menu-section__title { position: relative; padding-bottom: .55rem; }
+
+.menu-section__title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 2.5rem;
+  height: 2px;
+  background: var(--accent);
+}
+
+.menu-section__note { font-style: italic; }
+
+.badge { background: rgb(33 26 20 / 5%); border-color: transparent; }
+
+.badge--star { background: rgb(143 106 29 / 13%); border-color: transparent; }

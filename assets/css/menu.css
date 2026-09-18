@@ -1,0 +1,311 @@
+/* ==========================================================================
+   Struktura stranice menija — ista za sve lokale.
+   Izgled (boje, fontovi, detalji) dolazi iz theme-<lokal>.css, koji se
+   učitava posle ovog fajla i menja promenljive ispod.
+   ========================================================================== */
+
+:root {
+  /* Boje */
+  --bg:          #ffffff;
+  --text:        #1a1a1a;
+  --muted:       #767676;
+  --line:        #e5e0d8;
+  --accent:      #8a6a2f;
+  --hero-bg:     #1a1a1a;
+  --hero-text:   #ffffff;
+  --hero-accent: #d8c9a8;
+  --hero-muted:  rgb(255 255 255 / 70%);
+
+  /* Podnožje podrazumevano prati zaglavlje; tema sme da ga razdvoji. */
+  --footer-bg:     var(--hero-bg);
+  --footer-text:   var(--hero-text);
+  --footer-muted:  var(--hero-muted);
+  --footer-accent: var(--hero-accent);
+
+  /* Tipografija */
+  --font-display: Georgia, serif;
+  --font-body: system-ui, sans-serif;
+  --font-price: var(--font-body);
+  --price-weight: 600;
+
+  /* Oblik */
+  --wrap: 1060px;
+  --nav-h: 3.5rem;
+  --pill: 999px;
+
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+h1, h2 { font-family: var(--font-display); line-height: 1.12; margin: 0; }
+
+:where(a, button):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: clamp(1.15rem, 4vw, 2rem);
+}
+
+/* --- Zaglavlje lokala ---------------------------------------------------- */
+
+.venue-hero {
+  position: relative;
+  background: var(--hero-bg);
+  color: var(--hero-text);
+  overflow: hidden;
+  text-align: center;
+}
+
+.venue-hero > * { position: relative; }
+
+.venue-hero__inner { padding-block: clamp(2.25rem, 7vw, 3.5rem); }
+
+.venue-crest {
+  width: clamp(72px, 14vw, 92px);
+  height: clamp(72px, 14vw, 92px);
+  margin: 0 auto clamp(.9rem, 3vw, 1.35rem);
+}
+
+.venue-hero__kicker {
+  margin: 0 0 .7rem;
+  font-size: .7rem;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--hero-accent);
+}
+
+.venue-hero__name {
+  font-size: clamp(2.1rem, 7vw, 3.3rem);
+  font-weight: 600;
+}
+
+.venue-hero__meta {
+  margin: clamp(.9rem, 2.5vw, 1.25rem) 0 0;
+  font-size: .87rem;
+  color: var(--hero-muted);
+}
+
+/* --- Lepljiva traka kategorija ------------------------------------------- */
+
+.catnav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--bg) 94%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.catnav__list {
+  display: flex;
+  gap: .3rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  list-style: none;
+  margin: 0;
+  padding: .55rem clamp(1.15rem, 4vw, 2rem);
+  scroll-snap-type: x proximity;
+}
+
+.catnav__list::-webkit-scrollbar { display: none; }
+
+@media (min-width: 62rem) {
+  .catnav__list { justify-content: center; }
+}
+
+.catnav__list a {
+  display: block;
+  white-space: nowrap;
+  scroll-snap-align: center;
+  text-decoration: none;
+  font-size: .85rem;
+  color: var(--muted);
+  border: 1px solid transparent;
+  border-radius: var(--pill);
+  padding: .38rem .85rem;
+  transition: color .18s ease, border-color .18s ease, background-color .18s ease;
+}
+
+.catnav__list a:hover { color: var(--text); border-color: var(--line); }
+
+.catnav__list a[aria-current="true"] {
+  color: var(--accent);
+  border-color: currentColor;
+}
+
+/* --- Sekcije ------------------------------------------------------------- */
+
+.menu-body { padding-block: clamp(.5rem, 2vw, 1rem) 1rem; }
+
+.menu-section {
+  padding-top: clamp(2rem, 5vw, 3rem);
+  /* Sidro staje iznad trake; padding sekcije spušta naslov tačno ispod nje. */
+  scroll-margin-top: calc(var(--nav-h) - .75rem);
+}
+
+.menu-section__head {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+}
+
+.menu-section__title { font-size: clamp(1.45rem, 3.4vw, 1.95rem); font-weight: 600; }
+
+.menu-section__note {
+  margin: 0 0 0 auto;
+  font-size: .8rem;
+  color: var(--muted);
+  text-align: right;
+}
+
+/* --- Stavke -------------------------------------------------------------- */
+
+.items { list-style: none; margin: 0; padding: 0; }
+
+@media (min-width: 48rem) {
+  .items { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 3rem; }
+}
+
+.item { padding-block: .85rem; border-top: 1px solid var(--line); }
+
+.item:first-child { border-top: 0; }
+
+@media (min-width: 48rem) {
+  .item:nth-child(2) { border-top: 0; }
+}
+
+.item__head { display: flex; align-items: baseline; gap: .55rem; }
+
+.item__name { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; }
+
+.item__dots {
+  flex: 1;
+  height: 1px;
+  margin-bottom: .32rem;
+  background-image: linear-gradient(to right, var(--line) 0 3px, transparent 3px);
+  background-size: 7px 1px;
+  background-repeat: repeat-x;
+}
+
+.item__price {
+  font-family: var(--font-price);
+  font-variant-numeric: tabular-nums;
+  font-weight: var(--price-weight);
+  font-size: .98rem;
+  white-space: nowrap;
+}
+
+.item__desc { margin: .25rem 0 0; color: var(--muted); font-size: .88rem; max-width: 32rem; }
+
+.item__meta { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .45rem; }
+
+.badge {
+  font-size: .67rem;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: var(--pill);
+  padding: .16rem .55rem;
+}
+
+.badge--star { color: var(--accent); border-color: currentColor; }
+
+/* --- Dugme za vrh strane ------------------------------------------------- */
+
+.to-top {
+  position: fixed;
+  right: clamp(1rem, 4vw, 2rem);
+  bottom: clamp(1rem, 4vw, 2rem);
+  z-index: 9;
+  width: 2.9rem;
+  height: 2.9rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--pill);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  box-shadow: 0 8px 22px -12px rgb(0 0 0 / 45%);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(.5rem);
+  transition: opacity .2s ease, transform .2s ease, visibility .2s;
+}
+
+.to-top[data-visible="true"] { opacity: 1; visibility: visible; transform: none; }
+
+.to-top svg { width: 1rem; height: 1rem; }
+
+/* --- Podnožje ------------------------------------------------------------ */
+
+.venue-footer {
+  background: var(--footer-bg);
+  color: var(--footer-muted);
+  margin-top: clamp(3rem, 8vw, 4.5rem);
+  padding-block: clamp(2.25rem, 6vw, 3.25rem);
+  font-size: .9rem;
+}
+
+.venue-footer__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12.5rem), 1fr));
+  gap: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.venue-footer h2 {
+  font-family: var(--font-body);
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--footer-accent);
+  margin-bottom: .45rem;
+}
+
+.venue-footer p { margin: 0; color: var(--footer-text); }
+
+.venue-footer a { color: var(--footer-text); text-decoration-color: color-mix(in srgb, var(--footer-accent) 60%, transparent); }
+
+.venue-footer__note {
+  border-top: 1px solid color-mix(in srgb, var(--footer-text) 14%, transparent);
+  padding-top: 1.35rem;
+  font-size: .82rem;
+}
+
+/* --- Štampa -------------------------------------------------------------- */
+
+@media print {
+  .catnav, .to-top, .venue-footer { display: none; }
+  body { background: #fff; }
+  .venue-hero { background: #fff; color: #000; }
+  .venue-hero::before, .venue-hero::after { display: none !important; }
+  .venue-hero__meta, .venue-hero__kicker { color: #444; }
+}

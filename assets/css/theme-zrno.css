@@ -1,0 +1,121 @@
+/* ==========================================================================
+   Kafeterija Zrno — moderna minimalna tema: crno zaglavlje, čisto belo telo,
+   Space Grotesk, cene u mono fontu, oštre ivice i verzalna navigacija.
+   ========================================================================== */
+
+:root {
+  --bg:          #ffffff;
+  --text:        #101010;
+  --muted:       #6e6e6e;
+  --line:        #e6e6e6;
+  --accent:      #d8452a;
+
+  --hero-bg:     #101010;
+  --hero-text:   #ffffff;
+  --hero-accent: #d8452a;
+  --hero-muted:  rgb(255 255 255 / 62%);
+
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Space Grotesk", system-ui, sans-serif;
+  --font-price: "JetBrains Mono", ui-monospace, monospace;
+  --price-weight: 500;
+
+  --wrap: 1000px;
+  --pill: 0;
+}
+
+/* Mreža tankih linija u zaglavlju. */
+.venue-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 6%) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 6%) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(70% 70% at 50% 40%, #000, transparent);
+}
+
+.venue-hero__inner { padding-block: clamp(2.5rem, 8vw, 4rem); }
+
+.venue-crest { border: 1px solid rgb(255 255 255 / 14%); padding: .6rem; }
+
+.venue-hero__kicker {
+  font-family: var(--font-price);
+  font-size: .68rem;
+  letter-spacing: .3em;
+}
+
+.venue-hero__name {
+  font-size: clamp(2.3rem, 8vw, 3.8rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.venue-hero__meta {
+  font-family: var(--font-price);
+  font-size: .78rem;
+  letter-spacing: .04em;
+}
+
+/* Navigacija: verzal, oštre ivice, puna traka kad je aktivna. */
+.catnav { border-bottom: 1px solid var(--text); }
+
+.catnav__list a {
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: .45rem .8rem;
+  border: 1px solid transparent;
+}
+
+.catnav__list a:hover { color: var(--text); border-color: var(--line); }
+
+.catnav__list a[aria-current="true"] {
+  color: #fff;
+  background: var(--text);
+  border-color: var(--text);
+}
+
+/* Naslovi sekcija: krupno, zbijeno, sa mono oznakom sa strane. */
+.menu-section__head {
+  align-items: end;
+  border-bottom: 1px solid var(--text);
+  padding-bottom: .6rem;
+  margin-bottom: 1.5rem;
+}
+
+.menu-section__title {
+  font-size: clamp(1.7rem, 4.5vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.menu-section__note {
+  font-family: var(--font-price);
+  font-size: .7rem;
+  letter-spacing: .06em;
+}
+
+/* Bez tačkastog vodiča; cena je mono i u akcentu. */
+.item__dots { background: none; }
+
+.item__name { font-weight: 600; font-size: 1rem; }
+
+.item__price { font-size: .88rem; color: var(--accent); letter-spacing: -0.02em; }
+
+.item__desc { font-size: .85rem; }
+
+.badge {
+  font-family: var(--font-price);
+  font-size: .62rem;
+  letter-spacing: .1em;
+  text-transform: none;
+  border-radius: 0;
+}
+
+.badge--star { color: #fff; background: var(--accent); border-color: var(--accent); }
+
+.to-top { border-radius: 0; border-color: var(--text); }

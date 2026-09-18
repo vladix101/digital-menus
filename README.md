@@ -13,7 +13,9 @@ index.html                 spisak lokala (interno, noindex)
 404.html                   stranica za nepostojeće adrese
 _headers                   keširanje i sigurnosna zaglavlja (Cloudflare Pages)
 assets/
-  css/site.css             ceo dizajn
+  css/site.css             naslovna i 404
+  css/menu.css             struktura stranice menija, ista za sve lokale
+  css/theme-<lokal>.css    boje, fontovi i detalji jednog lokala
   js/menu.js               iscrtava meni iz JSON-a, traka kategorija, dugme za vrh
   img/brand/favicon.svg    ikonica u tabu
   img/<lokal>/crest.svg    znak lokala u zaglavlju
@@ -26,6 +28,11 @@ Svaka mapa lokala je jedna stranica: statično zaglavlje i podnožje (naziv,
 adresa, radno vreme, telefon) plus meni upisan kao JSON u
 `<script id="menu-data">`. `menu.js` iz tog JSON-a iscrtava sekcije, cene i
 lepljivu traku sa kategorijama.
+
+Izgled je odvojen od strukture: `menu.css` nosi raspored i ponašanje, a
+`theme-<lokal>.css` boje, fontove i detalje. Trenutno su tri različita stila —
+topla klasika (Bašta 21), svetla editorijalna (Trattoria Nona) i moderna
+minimalna (Zrno).
 
 ## Izmena cena i ponude
 
@@ -52,8 +59,9 @@ i push-a Cloudflare sam objavi novu verziju.
 1. Kopirajte mapu postojećeg lokala pod novim imenom, npr. `kod-mice/`.
    Ime mape je i adresa menija: `/kod-mice`.
 2. U `kod-mice/index.html` izmenite zaglavlje, podnožje i JSON menija.
-3. Napravite `assets/img/kod-mice/crest.svg` — znak lokala, zlatne linije na
-   providnoj pozadini (stoji na tamnom zaglavlju).
+3. Napravite `assets/css/theme-kod-mice.css` (najlakše kopijom postojeće teme) i
+   `assets/img/kod-mice/crest.svg` — znak u bojama te teme. Povežite oba u
+   stranici, zajedno sa fontovima koje tema koristi.
 4. Dodajte red u spisak u `index.html`.
 
 ## Lokalni pregled
