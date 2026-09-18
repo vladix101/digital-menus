@@ -15,7 +15,8 @@ _headers                   keširanje i sigurnosna zaglavlja (Cloudflare Pages)
 assets/
   css/site.css             ceo dizajn (naslovna + meniji)
   js/menu.js               iscrtava meni iz JSON-a i pravi navigaciju kategorija
-  img/                     logo, favicon, naslovne slike i znaci lokala (SVG)
+  img/brand/               logo i favicon platforme (SVG)
+  img/<lokal>/             cover.svg (naslovna slika) i crest.svg (znak lokala)
 basta21/index.html         meni lokala → /basta21
 trattoria-nona/index.html  meni lokala → /trattoria-nona
 zrno/index.html            meni lokala → /zrno
@@ -52,7 +53,8 @@ Oblik stavke:
 1. Kopirajte mapu postojećeg lokala pod novim imenom, npr. `kod-mice/`.
    Ime mape je i adresa menija: `/kod-mice`.
 2. U `kod-mice/index.html` izmenite naslov, zaglavlje, podnožje i JSON menija.
-3. Dodajte naslovnu sliku i znak u `assets/img/` i povežite ih u toj stranici.
+3. Napravite `assets/img/kod-mice/` sa `cover.svg` i `crest.svg` i povežite ih
+   u toj stranici — svaki lokal drži svoje slike u svojoj mapi.
 4. U `index.html` (naslovna) dodajte novu `<li class="venue-card">` karticu sa
    linkom ka `/kod-mice/`.
 
