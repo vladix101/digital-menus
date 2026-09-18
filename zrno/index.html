@@ -15,28 +15,20 @@
 </head>
 <body>
 
-<header class="hero">
-  <div class="site-header">
-    <div class="wrap">
-      <a class="brand" href="/">
-        <img class="brand__mark" src="/assets/img/brand/logo.svg" alt="" width="38" height="38">
-        <span class="brand__name">MENI<span>KA</span></span>
-      </a>
-      <a class="header-link" href="/">Svi lokali</a>
-    </div>
-  </div>
+<header class="venue-hero">
+  <div class="wrap venue-hero__inner">
+    <img class="venue-crest" src="/assets/img/zrno/crest.svg" alt="" width="96" height="96">
+    <p class="venue-hero__kicker">Pržionica i kafeterija</p>
+    <h1 class="venue-hero__name">Kafeterija Zrno</h1>
+    <p class="venue-hero__tagline">Pržimo utorkom i petkom. Ono što pijete možete i da ponesete.</p>
 
-  <div class="wrap">
-    <div class="menu-hero__inner">
-      <img class="venue-crest" src="/assets/img/zrno/crest.svg" alt="" width="104" height="104">
-      <div>
-        <p class="eyebrow">Niš · Kafeterija i pržionica</p>
-        <h1 class="menu-hero__title">Kafeterija Zrno</h1>
-        <p class="menu-hero__sub">
-          Radno vreme <b>07–20 h</b> &nbsp;·&nbsp; Obrenovićeva 14 &nbsp;·&nbsp; Cene su u dinarima (RSD)
-        </p>
-      </div>
-    </div>
+    <div class="venue-hero__rule" aria-hidden="true"><span>MENI</span></div>
+
+    <ul class="venue-hero__meta">
+        <li><b>07–20 h</b> radnim danima</li>
+        <li>Obrenovićeva 14, Niš</li>
+        <li>Cene u dinarima (RSD)</li>
+    </ul>
   </div>
 </header>
 
@@ -44,35 +36,38 @@
 
 <main class="menu-body wrap" data-menu-body>
   <noscript>
-    <p>Za prikaz menija potreban je uključen JavaScript. Pozovite nas na
-      <a href="tel:+381180000000">+381 18 000 0000</a>.</p>
+    <p>Za prikaz menija potreban je uključen JavaScript. Ponudu vam rado
+      pročitamo na <a href="tel:+381180000000">+381180000000</a>.</p>
   </noscript>
 </main>
 
-<footer class="site-footer">
+<button class="to-top" data-to-top type="button" aria-label="Nazad na vrh">
+  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M8 13V3M3.5 7.5 8 3l4.5 4.5"/>
+  </svg>
+</button>
+
+<footer class="venue-footer">
   <div class="wrap">
-    <div class="info-grid">
-      <div>
-        <h3>Adresa</h3>
-        <p>Obrenovićeva 14, Niš</p>
-      </div>
-      <div>
-        <h3>Telefon</h3>
-        <p><a href="tel:+381180000000">+381 18 000 0000</a></p>
-      </div>
-      <div>
-        <h3>Radno vreme</h3>
-        <p>Radnim danima 07–20 h, vikendom 08–20 h</p>
-      </div>
-      <div>
-        <h3>Zrno za kući</h3>
-        <p>Pržimo utorkom i petkom. Pakovanje 250 g dostupno na kasi.</p>
-      </div>
+    <div class="venue-footer__grid">
+        <div>
+          <h2>Adresa</h2>
+          <p>Obrenovićeva 14, Niš</p>
+        </div>
+        <div>
+          <h2>Telefon</h2>
+          <p><a href="tel:+381180000000">+381 18 000 0000</a></p>
+        </div>
+        <div>
+          <h2>Radno vreme</h2>
+          <p>Radnim danima 07–20 h, vikendom 08–20 h</p>
+        </div>
+        <div>
+          <h2>Zrno za kući</h2>
+          <p>Pakovanje 250 g dostupno na kasi.</p>
+        </div>
     </div>
-    <div class="footer-bottom">
-      <span>Alergeni i sastojci dostupni na upit kod osoblja.</span>
-      <a href="/">Svi lokali na Menika</a>
-    </div>
+    <p class="venue-footer__note">Doručak se služi do 12 h. Alergeni i sastojci dostupni na upit kod osoblja.</p>
   </div>
 </footer>
 

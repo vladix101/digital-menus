@@ -1,6 +1,6 @@
 /**
  * Iscrtava meni lokala iz JSON-a upisanog u samu stranicu
- * (<script type="application/json" id="menu-data">), pravi navigaciju
+ * (<script type="application/json" id="menu-data">), pravi lepljivu traku
  * kategorija i označava kategoriju koja je trenutno na ekranu.
  *
  * Dodavanje novog lokala = nova mapa + kopija index.html + izmena JSON-a.
@@ -74,10 +74,15 @@
   const sections = menu.sections.map((section) => {
     const id = slug(section.title);
 
+    // Sidro je sama sekcija — na njoj stoji scroll-margin-top, pa naslov
+    // ostaje vidljiv ispod lepljive trake.
     const wrapper = el('section', 'menu-section');
+    wrapper.id = id;
+    wrapper.setAttribute('aria-labelledby', `${id}-naslov`);
+
     const head = el('div', 'menu-section__head');
     const title = el('h2', 'menu-section__title', section.title);
-    title.id = id;
+    title.id = `${id}-naslov`;
     head.append(title);
     if (section.note) head.append(el('p', 'menu-section__note', section.note));
 
@@ -108,26 +113,43 @@
     if (id === active) return;
     if (active) byId.get(active).link.removeAttribute('aria-current');
     active = id;
+
     const { link } = byId.get(id);
     link.setAttribute('aria-current', 'true');
-    // Drži aktivnu kategoriju u vidnom polju horizontalne trake.
-    link.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+
+    // Pomera se samo traka po horizontali. scrollIntoView bi umeo da pomeri
+    // i celu stranicu i pokvari skok na sidro.
+    navList.scrollTo({
+      left: link.offsetLeft - (navList.clientWidth - link.offsetWidth) / 2,
+      behavior: 'smooth',
+    });
   };
 
   const visible = new Set();
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        const id = entry.target.querySelector('h2').id;
-        entry.isIntersecting ? visible.add(id) : visible.delete(id);
+        entry.isIntersecting ? visible.add(entry.target.id) : visible.delete(entry.target.id);
       });
       const first = sections.find((s) => visible.has(s.id));
       if (first) setActive(first.id);
     },
-    // rootMargin prima samo px i %, ne rem.
+    // rootMargin prima samo px i %, ne rem. Gornja vrednost ≈ visina trake.
     { rootMargin: '-72px 0px -55% 0px' },
   );
 
   sections.forEach((s) => observer.observe(s.wrapper));
   setActive(sections[0].id);
+
+  /* --- Dugme za povratak na vrh --------------------------------------- */
+
+  const toTop = document.querySelector('[data-to-top]');
+  if (toTop) {
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    const onScroll = () => {
+      toTop.dataset.visible = String(window.scrollY > window.innerHeight * 0.6);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
 })();

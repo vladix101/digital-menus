@@ -15,28 +15,20 @@
 </head>
 <body>
 
-<header class="hero">
-  <div class="site-header">
-    <div class="wrap">
-      <a class="brand" href="/">
-        <img class="brand__mark" src="/assets/img/brand/logo.svg" alt="" width="38" height="38">
-        <span class="brand__name">MENI<span>KA</span></span>
-      </a>
-      <a class="header-link" href="/">Svi lokali</a>
-    </div>
-  </div>
+<header class="venue-hero">
+  <div class="wrap venue-hero__inner">
+    <img class="venue-crest" src="/assets/img/trattoria-nona/crest.svg" alt="" width="96" height="96">
+    <p class="venue-hero__kicker">Italijanska kuhinja</p>
+    <h1 class="venue-hero__name">Trattoria Nona</h1>
+    <p class="venue-hero__tagline">Testenine mesimo svakog jutra, picu pečemo na drva.</p>
 
-  <div class="wrap">
-    <div class="menu-hero__inner">
-      <img class="venue-crest" src="/assets/img/trattoria-nona/crest.svg" alt="" width="104" height="104">
-      <div>
-        <p class="eyebrow">Beograd · Italijanski restoran</p>
-        <h1 class="menu-hero__title">Trattoria Nona</h1>
-        <p class="menu-hero__sub">
-          Radno vreme <b>12–24 h</b> &nbsp;·&nbsp; Gospodar Jevremova 8 &nbsp;·&nbsp; Cene su u dinarima (RSD)
-        </p>
-      </div>
-    </div>
+    <div class="venue-hero__rule" aria-hidden="true"><span>MENI</span></div>
+
+    <ul class="venue-hero__meta">
+        <li><b>12–24 h</b>, utorkom do nedelje</li>
+        <li>Gospodar Jevremova 8, Beograd</li>
+        <li>Cene u dinarima (RSD)</li>
+    </ul>
   </div>
 </header>
 
@@ -44,35 +36,38 @@
 
 <main class="menu-body wrap" data-menu-body>
   <noscript>
-    <p>Za prikaz menija potreban je uključen JavaScript. Za rezervaciju i ponudu pozovite
-      <a href="tel:+381110000000">+381 11 000 0000</a>.</p>
+    <p>Za prikaz menija potreban je uključen JavaScript. Ponudu vam rado
+      pročitamo na <a href="tel:+381110000000">+381110000000</a>.</p>
   </noscript>
 </main>
 
-<footer class="site-footer">
+<button class="to-top" data-to-top type="button" aria-label="Nazad na vrh">
+  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M8 13V3M3.5 7.5 8 3l4.5 4.5"/>
+  </svg>
+</button>
+
+<footer class="venue-footer">
   <div class="wrap">
-    <div class="info-grid">
-      <div>
-        <h3>Adresa</h3>
-        <p>Gospodar Jevremova 8, Beograd</p>
-      </div>
-      <div>
-        <h3>Rezervacije</h3>
-        <p><a href="tel:+381110000000">+381 11 000 0000</a></p>
-      </div>
-      <div>
-        <h3>Radno vreme</h3>
-        <p>Utorak – nedelja, 12–24 h</p>
-      </div>
-      <div>
-        <h3>Napomena</h3>
-        <p>Testenine mesimo svakog jutra. Bezglutenska varijanta uz doplatu.</p>
-      </div>
+    <div class="venue-footer__grid">
+        <div>
+          <h2>Adresa</h2>
+          <p>Gospodar Jevremova 8, Beograd</p>
+        </div>
+        <div>
+          <h2>Rezervacije</h2>
+          <p><a href="tel:+381110000000">+381 11 000 0000</a></p>
+        </div>
+        <div>
+          <h2>Radno vreme</h2>
+          <p>Utorak – nedelja, 12–24 h</p>
+        </div>
+        <div>
+          <h2>Napomena</h2>
+          <p>Bezglutensko testo dostupno uz doplatu.</p>
+        </div>
     </div>
-    <div class="footer-bottom">
-      <span>Alergeni i sastojci dostupni na upit kod osoblja.</span>
-      <a href="/">Svi lokali na Menika</a>
-    </div>
+    <p class="venue-footer__note">Alergeni i sastojci dostupni na upit kod osoblja.</p>
   </div>
 </footer>
 

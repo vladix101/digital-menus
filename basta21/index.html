@@ -15,28 +15,20 @@
 </head>
 <body>
 
-<header class="hero">
-  <div class="site-header">
-    <div class="wrap">
-      <a class="brand" href="/">
-        <img class="brand__mark" src="/assets/img/brand/logo.svg" alt="" width="38" height="38">
-        <span class="brand__name">MENI<span>KA</span></span>
-      </a>
-      <a class="header-link" href="/">Svi lokali</a>
-    </div>
-  </div>
+<header class="venue-hero">
+  <div class="wrap venue-hero__inner">
+    <img class="venue-crest" src="/assets/img/basta21/crest.svg" alt="" width="96" height="96">
+    <p class="venue-hero__kicker">Kafe i letnja bašta</p>
+    <h1 class="venue-hero__name">Bašta 21</h1>
+    <p class="venue-hero__tagline">Kafa ujutru, koktel uveče — i bašta koja radi dok ima gostiju.</p>
 
-  <div class="wrap">
-    <div class="menu-hero__inner">
-      <img class="venue-crest" src="/assets/img/basta21/crest.svg" alt="" width="104" height="104">
-      <div>
-        <p class="eyebrow">Novi Sad · Kafe &amp; bar</p>
-        <h1 class="menu-hero__title">Bašta 21</h1>
-        <p class="menu-hero__sub">
-          Radno vreme <b>08–01 h</b> &nbsp;·&nbsp; Zmaj Jovina 21 &nbsp;·&nbsp; Cene su u dinarima (RSD)
-        </p>
-      </div>
-    </div>
+    <div class="venue-hero__rule" aria-hidden="true"><span>MENI</span></div>
+
+    <ul class="venue-hero__meta">
+        <li><b>08–01 h</b> svakog dana</li>
+        <li>Zmaj Jovina 21, Novi Sad</li>
+        <li>Cene u dinarima (RSD)</li>
+    </ul>
   </div>
 </header>
 
@@ -44,35 +36,38 @@
 
 <main class="menu-body wrap" data-menu-body>
   <noscript>
-    <p>Za prikaz menija potreban je uključen JavaScript. Pozovite nas na
-      <a href="tel:+381210000000">+381 21 000 0000</a> i rado ćemo vam pročitati ponudu.</p>
+    <p>Za prikaz menija potreban je uključen JavaScript. Ponudu vam rado
+      pročitamo na <a href="tel:+381210000000">+381210000000</a>.</p>
   </noscript>
 </main>
 
-<footer class="site-footer">
+<button class="to-top" data-to-top type="button" aria-label="Nazad na vrh">
+  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M8 13V3M3.5 7.5 8 3l4.5 4.5"/>
+  </svg>
+</button>
+
+<footer class="venue-footer">
   <div class="wrap">
-    <div class="info-grid">
-      <div>
-        <h3>Adresa</h3>
-        <p>Zmaj Jovina 21, Novi Sad</p>
-      </div>
-      <div>
-        <h3>Rezervacije</h3>
-        <p><a href="tel:+381210000000">+381 21 000 0000</a></p>
-      </div>
-      <div>
-        <h3>Radno vreme</h3>
-        <p>Ponedeljak – nedelja, 08–01 h</p>
-      </div>
-      <div>
-        <h3>Wi-Fi</h3>
-        <p>mreža <b>Basta21</b> · lozinka <b>kafa2021</b></p>
-      </div>
+    <div class="venue-footer__grid">
+        <div>
+          <h2>Adresa</h2>
+          <p>Zmaj Jovina 21, Novi Sad</p>
+        </div>
+        <div>
+          <h2>Rezervacije</h2>
+          <p><a href="tel:+381210000000">+381 21 000 0000</a></p>
+        </div>
+        <div>
+          <h2>Radno vreme</h2>
+          <p>Ponedeljak – nedelja, 08–01 h</p>
+        </div>
+        <div>
+          <h2>Wi-Fi</h2>
+          <p>mreža <b>Basta21</b> · lozinka <b>kafa2021</b></p>
+        </div>
     </div>
-    <div class="footer-bottom">
-      <span>Alergeni i sastojci dostupni na upit kod osoblja.</span>
-      <a href="/">Svi lokali na Menika</a>
-    </div>
+    <p class="venue-footer__note">Kuhinja radi do 23 h. Alergeni i sastojci dostupni na upit kod osoblja.</p>
   </div>
 </footer>
 

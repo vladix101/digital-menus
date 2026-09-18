@@ -1,37 +1,36 @@
-# Menika — digitalni meniji
+# Digitalni meniji
 
-Statički sajt sa digitalnim menijima za kafiće i restorane. Naslovna strana vodi
-ka meniju svakog lokala, na primer `/basta21`.
+Statički sajt sa digitalnim menijima za kafiće i restorane. Bez build koraka i
+bez zavisnosti — Cloudflare Pages servira fajlove direktno iz repozitorijuma.
 
-Bez build koraka, bez zavisnosti — čist HTML, CSS i jedan JS fajl. Cloudflare
-Pages servira fajlove direktno iz repozitorijuma.
+Naslovna strana (`/`) je interni spisak lokala i nije povezana ni sa jedne
+stranice menija — gost koji skenira QR kôd ostaje u svom lokalu.
 
 ## Struktura
 
 ```
-index.html                 naslovna strana sa listom lokala
+index.html                 spisak lokala (interno, noindex)
 404.html                   stranica za nepostojeće adrese
 _headers                   keširanje i sigurnosna zaglavlja (Cloudflare Pages)
 assets/
-  css/site.css             ceo dizajn (naslovna + meniji)
-  js/menu.js               iscrtava meni iz JSON-a i pravi navigaciju kategorija
-  img/brand/               logo i favicon platforme (SVG)
-  img/<lokal>/             cover.svg (naslovna slika) i crest.svg (znak lokala)
-basta21/index.html         meni lokala → /basta21
-trattoria-nona/index.html  meni lokala → /trattoria-nona
-zrno/index.html            meni lokala → /zrno
+  css/site.css             ceo dizajn
+  js/menu.js               iscrtava meni iz JSON-a, traka kategorija, dugme za vrh
+  img/brand/favicon.svg    ikonica u tabu
+  img/<lokal>/crest.svg    znak lokala u zaglavlju
+basta21/index.html         → /basta21
+trattoria-nona/index.html  → /trattoria-nona
+zrno/index.html            → /zrno
 ```
 
 Svaka mapa lokala je jedna stranica: statično zaglavlje i podnožje (naziv,
-adresa, radno vreme, telefon) plus meni upisan kao JSON u `<script id="menu-data">`.
-`menu.js` iz tog JSON-a iscrtava sekcije, cene i lepljivu traku sa kategorijama.
+adresa, radno vreme, telefon) plus meni upisan kao JSON u
+`<script id="menu-data">`. `menu.js` iz tog JSON-a iscrtava sekcije, cene i
+lepljivu traku sa kategorijama.
 
 ## Izmena cena i ponude
 
 Otvorite `index.html` lokala i menjajte samo JSON na dnu fajla. Posle commit-a
 i push-a Cloudflare sam objavi novu verziju.
-
-Oblik stavke:
 
 ```json
 {
@@ -52,30 +51,29 @@ Oblik stavke:
 
 1. Kopirajte mapu postojećeg lokala pod novim imenom, npr. `kod-mice/`.
    Ime mape je i adresa menija: `/kod-mice`.
-2. U `kod-mice/index.html` izmenite naslov, zaglavlje, podnožje i JSON menija.
-3. Napravite `assets/img/kod-mice/` sa `cover.svg` i `crest.svg` i povežite ih
-   u toj stranici — svaki lokal drži svoje slike u svojoj mapi.
-4. U `index.html` (naslovna) dodajte novu `<li class="venue-card">` karticu sa
-   linkom ka `/kod-mice/`.
+2. U `kod-mice/index.html` izmenite zaglavlje, podnožje i JSON menija.
+3. Napravite `assets/img/kod-mice/crest.svg` — znak lokala, zlatne linije na
+   providnoj pozadini (stoji na tamnom zaglavlju).
+4. Dodajte red u spisak u `index.html`.
 
 ## Lokalni pregled
 
 Putanje su apsolutne (`/assets/...`), pa otvaranje fajla duplim klikom ne radi.
-Pokrenite bilo koji statički server iz korena projekta:
+Pokrenite statički server iz korena projekta:
 
 ```bash
-python -m http.server 8080
-# pa otvorite http://localhost:8080
+npx serve .
+# pa otvorite ispisanu adresu
 ```
 
 ## Deploy na Cloudflare Pages
 
-Cloudflare Pages → Create a project → Connect to Git → izaberite ovaj repozitorijum.
+Create a project → Connect to Git → ovaj repozitorijum.
 
 | Podešavanje | Vrednost |
 | --- | --- |
 | Framework preset | None |
 | Build command | *(prazno)* |
-| Build output directory | `/` |
+| Build output directory | *(prazno — koren)* |
 
 Svaki push na `main` objavljuje novu verziju.
