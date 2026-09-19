@@ -7,14 +7,14 @@
 :root {
   --bg:          #fbf8f3;
   --text:        #2b2622;
-  --muted:       #857a6e;
+  --muted:       #756b60;
   --line:        #e2dad0;
   --accent:      #a8452c;
 
   --hero-bg:     #f3ece1;
   --hero-text:   #2b2622;
   --hero-accent: #a8452c;
-  --hero-muted:  #7b7065;
+  --hero-muted:  #6f655c;
 
   /* Podnožje je jedina tamna površina — zatvara stranu. */
   --footer-bg:     #2f2a24;
