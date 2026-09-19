@@ -1,0 +1,25 @@
+{
+  "name": "digitalni-meniji",
+  "main": "src/index.js",
+  "compatibility_date": "2026-09-18",
+
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page"
+  },
+
+  "vars": {
+    // Glavni domen. Sve ispred njega (basta21.<apex>) tumači se kao lokal.
+    "APEX_HOST": "digitalnimeniji.com"
+  },
+
+  // Zvezdica hvata svaki poddomen, pa novi lokal ne traži izmenu u Cloudflare-u.
+  // Uslov: u DNS-u zone postoje proksirani zapisi "@" i "*".
+  "routes": [
+    { "pattern": "digitalnimeniji.com/*", "zone_name": "digitalnimeniji.com" },
+    { "pattern": "*.digitalnimeniji.com/*", "zone_name": "digitalnimeniji.com" }
+  ],
+
+  "observability": { "enabled": true }
+}

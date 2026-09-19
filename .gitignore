@@ -1,7 +1,11 @@
+# Wrangler
+.wrangler/
+node_modules/
+.dev.vars
+
 # Editor
 .idea/
 .vscode/
-*.suo
 *.sw?
 
 # OS
