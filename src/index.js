@@ -11,6 +11,9 @@
  * Dodavanje lokala je zato samo nova mapa — ovde se ništa ne menja.
  */
 
+/** Fajlovi koje svaki host servira iz korena, isto kao glavni domen. */
+const SHARED_FILES = new Set(['/robots.txt', '/sitemap.xml', '/favicon.ico']);
+
 /** Poddomen lokala, ili null kada zahtev ide na glavni domen. */
 function venueLabel(hostname, apexHost) {
   const host = hostname.replace(/\.$/, '').toLowerCase();
@@ -27,8 +30,9 @@ export default {
     const url = new URL(request.url);
     const label = venueLabel(url.hostname, env.APEX_HOST);
 
-    // Zajednički fajlovi (CSS, JS, slike) stoje na istom mestu za sve lokale.
-    if (!label || url.pathname.startsWith('/assets/')) {
+    // Zajednički fajlovi (CSS, JS, slike) i fajlovi za pretraživače stoje na
+    // istom mestu za sve lokale.
+    if (!label || url.pathname.startsWith('/assets/') || SHARED_FILES.has(url.pathname)) {
       return env.ASSETS.fetch(request);
     }
 

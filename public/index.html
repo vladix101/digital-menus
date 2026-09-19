@@ -3,21 +3,338 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lokali</title>
-  <meta name="robots" content="noindex">
+  <title>Digitalni meniji — QR meni za kafiće i restorane</title>
+  <meta name="description" content="Digitalni meni za kafiće, barove i restorane. Gost skenira QR kôd i meni se otvara za dve sekunde, bez aplikacije. Cene menjate kad hoćete, bez ponovne štampe.">
+  <link rel="canonical" href="https://digitalnimeniji.com/">
   <link rel="icon" href="/assets/img/brand/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="/assets/css/site.css">
-</head>
-<body class="index-page">
 
-<main class="index-wrap">
-  <h1>Lokali</h1>
-  <ul class="index-list">
-    <li><a href="https://basta21.digitalnimeniji.com/">Bašta 21</a><span>Novi Sad</span></li>
-    <li><a href="https://trattoria-nona.digitalnimeniji.com/">Trattoria Nona</a><span>Beograd</span></li>
-    <li><a href="https://zrno.digitalnimeniji.com/">Kafeterija Zrno</a><span>Niš</span></li>
-  </ul>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://digitalnimeniji.com/">
+  <meta property="og:title" content="Digitalni meniji — QR meni za kafiće i restorane">
+  <meta property="og:description" content="Gost skenira QR kôd i meni se otvara za dve sekunde, bez aplikacije. Cene menjate kad hoćete, bez ponovne štampe.">
+  <meta property="og:locale" content="sr_RS">
+</head>
+<body>
+
+<header class="hero">
+  <div class="topbar">
+    <div class="wrap">
+      <a class="brand" href="/">
+        <img class="brand__mark" src="/assets/img/brand/logo.svg" alt="" width="34" height="34">
+        <span class="brand__name">Digitalni meniji</span>
+      </a>
+      <nav class="topnav" aria-label="Glavna navigacija">
+        <a href="#kako-radi">Kako radi</a>
+        <a href="#primeri">Primeri</a>
+        <a href="#ponuda">Šta dobijate</a>
+        <a href="#pitanja">Pitanja</a>
+      </nav>
+      <a class="btn btn--primary btn--sm" href="#kontakt">Zatražite ponudu</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="hero__grid">
+      <div>
+        <p class="eyebrow">QR meni za ugostitelje</p>
+        <h1 class="hero__title">Meni koji gost otvara <em>za dve sekunde</em>.</h1>
+        <p class="hero__lead">
+          Jedan QR kôd na stolu vodi do uvek aktuelnog menija. Bez aplikacije,
+          bez čekanja na štampu novog cenovnika. Promenite cenu ujutru — gost je
+          vidi za ručkom.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#kontakt">Zatražite ponudu</a>
+          <a class="btn btn--ghost" href="#primeri">Pogledajte primere uživo</a>
+        </div>
+        <ul class="hero__points">
+          <li>Radi na svakom telefonu</li>
+          <li>Učitava se za pola sekunde</li>
+          <li>Svoja adresa za vaš lokal</li>
+        </ul>
+      </div>
+
+      <!-- Telefon sa menijem — pokazuje proizvod bez fotografije. -->
+      <svg class="hero__device" viewBox="0 0 280 560" role="img" aria-label="Telefon sa otvorenim digitalnim menijem">
+        <rect x="8" y="8" width="264" height="544" rx="38" fill="#241d16" stroke="#a97c1f" stroke-width="1.5"/>
+        <rect x="20" y="20" width="240" height="520" rx="30" fill="#faf6ee"/>
+        <path d="M20 50a30 30 0 0 1 30-30h180a30 30 0 0 1 30 30v104H20z" fill="#17110d"/>
+        <rect x="112" y="30" width="56" height="7" rx="3.5" fill="#3a3129"/>
+        <circle cx="140" cy="78" r="18" fill="none" stroke="#e9d6a8" stroke-width="1.5"/>
+        <path d="M131 72h18v6a9 9 0 0 1-18 0z" fill="#a97c1f"/>
+        <text x="140" y="118" text-anchor="middle" font-family="Georgia, serif" font-size="19" fill="#faf6ee">Bašta 21</text>
+        <text x="140" y="138" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#9d9284" letter-spacing="1">08–01 h · NOVI SAD</text>
+
+        <g font-family="Inter, sans-serif" font-size="9" fill="#8b8074">
+          <rect x="34" y="168" width="52" height="19" rx="9.5" fill="#f1e6cd" stroke="#e0cb9c"/>
+          <text x="60" y="181" text-anchor="middle" fill="#8a6415">Kafa</text>
+          <text x="104" y="181">Koktela</text>
+          <text x="156" y="181">Pivo</text>
+          <text x="196" y="181">Hrana</text>
+        </g>
+
+        <g font-family="Georgia, serif" font-size="11" fill="#211a14">
+          <text x="34" y="222">Espresso</text><text x="246" y="222" text-anchor="end">180</text>
+          <text x="34" y="262">Cappuccino</text><text x="246" y="262" text-anchor="end">280</text>
+          <text x="34" y="302">Domaća limunada</text><text x="246" y="302" text-anchor="end">320</text>
+          <text x="34" y="342">Aperol spritz</text><text x="246" y="342" text-anchor="end">560</text>
+          <text x="34" y="382">Klub sendvič</text><text x="246" y="382" text-anchor="end">720</text>
+          <text x="34" y="422">Čizkejk</text><text x="246" y="422" text-anchor="end">420</text>
+        </g>
+        <g font-family="Inter, sans-serif" font-size="7.5" fill="#9d9284">
+          <text x="34" y="234">Jednostruki, sa čašom vode</text>
+          <text x="34" y="274">Klasičan odnos kafe i mleka</text>
+          <text x="34" y="314">Limun, nana, đumbir, med</text>
+          <text x="34" y="354">Aperol, prosecco, soda</text>
+          <text x="34" y="394">Piletina, slanina, uz pomfrit</text>
+          <text x="34" y="434">Sa šumskim voćem</text>
+        </g>
+        <g stroke="#e6dccb" stroke-width="1">
+          <path d="M34 242h212M34 282h212M34 322h212M34 362h212M34 402h212"/>
+        </g>
+        <rect x="104" y="520" width="72" height="4" rx="2" fill="#d8cdbb"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="section section--sand" aria-labelledby="zasto">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Zašto</p>
+        <h2 class="section__title" id="zasto">Štampani meni zastari čim izađe iz štamparije</h2>
+      </div>
+      <ul class="compare">
+        <li>
+          <h3>Poskupljenje usred sezone</h3>
+          <p><del>Nova štampa, čekanje, trošak</del> — ili precrtana cena hemijskom.
+            Kod nas je izmena gotova za minut i važi odmah na svim stolovima.</p>
+        </li>
+        <li>
+          <h3>Poderan i masan meni</h3>
+          <p><del>Menjate korice svake sezone</del> — telefon gosta je uvek čist,
+            a meni se ne cepa, ne gubi i ne prlja.</p>
+        </li>
+        <li>
+          <h3>Gost čeka konobara da pita</h3>
+          <p><del>Da li ima bezglutensko?</del> — opis, gramaža i oznake stoje uz
+            svaku stavku, pa se poručuje brže.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="kako-radi">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Kako radi</p>
+        <h2 class="section__title" id="kako-radi">Tri koraka do menija na stolu</h2>
+      </div>
+      <ul class="steps">
+        <li>
+          <h3>Pošaljete ponudu</h3>
+          <p>Dovoljan je postojeći meni — slika, PDF ili tabela. Mi ga prekucamo
+            i složimo po kategorijama.</p>
+        </li>
+        <li>
+          <h3>Dobijete svoju adresu</h3>
+          <p>Lokal dobija sopstvenu adresu i dizajn prilagođen njegovom
+            karakteru. Uz nju i QR kôd spreman za štampu.</p>
+        </li>
+        <li>
+          <h3>Menjate kad hoćete</h3>
+          <p>Javite izmenu i cena je promenjena isti dan. QR kôd ostaje isti —
+            nalepnice na stolovima se ne diraju.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--sand" aria-labelledby="primeri">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Primeri</p>
+        <h2 class="section__title" id="primeri">Tri lokala, tri različita stila</h2>
+        <p class="section__lead">
+          Meni ne izgleda isto za kafić i za restoran. Otvorite primere na
+          telefonu — to je tačno ono što vaš gost vidi.
+        </p>
+      </div>
+      <ul class="demos">
+        <li class="demo">
+          <div class="demo__swatch" style="background: #17110d; color: #e9d6a8;">Topla klasika</div>
+          <div class="demo__body">
+            <h3><a href="https://basta21.digitalnimeniji.com/">Bašta 21</a></h3>
+            <p>Kafe i letnja bašta. Tamno zaglavlje, zlatni detalji, serif slova.</p>
+            <span class="demo__url">basta21.digitalnimeniji.com</span>
+          </div>
+        </li>
+        <li class="demo">
+          <div class="demo__swatch" style="background: #f3ece1; color: #a8452c;">Editorijalna</div>
+          <div class="demo__body">
+            <h3><a href="https://trattoria-nona.digitalnimeniji.com/">Trattoria Nona</a></h3>
+            <p>Italijanski restoran. Svetlo, mirno, terakota i klasična antikva.</p>
+            <span class="demo__url">trattoria-nona.digitalnimeniji.com</span>
+          </div>
+        </li>
+        <li class="demo">
+          <div class="demo__swatch" style="background: #101010; color: #d8452a;">Moderna</div>
+          <div class="demo__body">
+            <h3><a href="https://zrno.digitalnimeniji.com/">Kafeterija Zrno</a></h3>
+            <p>Specialty pržionica. Oštre ivice, crno-belo, cene u mono slovima.</p>
+            <span class="demo__url">zrno.digitalnimeniji.com</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ponuda">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Šta dobijate</p>
+        <h2 class="section__title" id="ponuda">Sve što treba da meni proradi</h2>
+      </div>
+      <ul class="offer">
+        <li>
+          <h3>Izrada menija</h3>
+          <p>Jednokratno, sve spremno pre nego što prvi gost skenira kôd.</p>
+          <ul>
+            <li>Prekucavanje postojećeg menija i raspored po kategorijama</li>
+            <li>Dizajn prilagođen karakteru lokala, ne gotov šablon</li>
+            <li>Sopstvena adresa oblika <b>vaslokal.digitalnimeniji.com</b></li>
+            <li>QR kôd u rezoluciji za štampu na nalepnice i stolove</li>
+            <li>Opisi, gramaže i oznake tipa <i>posno</i>, <i>ljuto</i>, <i>preporuka</i></li>
+          </ul>
+        </li>
+        <li>
+          <h3>Održavanje</h3>
+          <p>Mesečno, da meni ostane tačan bez vašeg truda.</p>
+          <ul>
+            <li>Izmene cena i ponude na vaš poziv ili poruku</li>
+            <li>Sezonska ponuda — letnja bašta, praznični meni</li>
+            <li>Hosting i domen, bez skrivenih troškova</li>
+            <li>Meni radi i kad padne struja u lokalu — nije na vašem uređaju</li>
+            <li>Bez ugovorne obaveze i bez naknade za raskid</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--sand" aria-labelledby="prednosti">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Detalji</p>
+        <h2 class="section__title" id="prednosti">Sitnice koje gost oseti</h2>
+      </div>
+      <ul class="features">
+        <li>
+          <h3>Bez aplikacije</h3>
+          <p>Meni se otvara u pregledaču telefona. Gost ne instalira ništa i ne
+            ostavlja nikakve podatke.</p>
+        </li>
+        <li>
+          <h3>Čita se i na suncu</h3>
+          <p>Krupna slova, jasne kategorije i dovoljan kontrast za bašta sto u
+            podne.</p>
+        </li>
+        <li>
+          <h3>Brzo i na slaboj mreži</h3>
+          <p>Stranica se učitava za pola sekunde jer nema teške platforme iza
+            sebe.</p>
+        </li>
+        <li>
+          <h3>Skok na kategoriju</h3>
+          <p>Traka sa kategorijama prati gosta dok skroluje — do pića se stiže
+            jednim dodirom.</p>
+        </li>
+        <li>
+          <h3>Cene u više varijanti</h3>
+          <p>Točeno pivo 0,3 i 0,5, vino na čašu i flašu — sve staje u jedan
+            red.</p>
+        </li>
+        <li>
+          <h3>Nema tuđih reklama</h3>
+          <p>Na meniju piše samo ime vašeg lokala. Bez logotipa platforme i bez
+            linkova na druge lokale.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="pitanja">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Pitanja</p>
+        <h2 class="section__title" id="pitanja">Ono što nas najčešće pitaju</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Šta ako promenim cene?</summary>
+          <p>Javite izmenu i menjamo je isti dan. QR kôd i adresa ostaju isti, pa
+            nalepnice na stolovima ne dirate.</p>
+        </details>
+        <details>
+          <summary>Da li gost mora nešto da instalira?</summary>
+          <p>Ne. Skenira kôd kamerom telefona i meni se otvori u pregledaču, isto
+            kao bilo koji sajt.</p>
+        </details>
+        <details>
+          <summary>Šta ako gost nema telefon ili je stariji?</summary>
+          <p>Digitalni meni ne zamenjuje papir nego ga rasterećuje. Većina lokala
+            zadrži nekoliko štampanih primeraka za goste kojima tako odgovara.</p>
+        </details>
+        <details>
+          <summary>Koliko traje izrada?</summary>
+          <p>Ako imate meni u nekom obliku, obično dan do dva. Složeniji restoranski
+            meni sa više od sto stavki traje nešto duže.</p>
+        </details>
+        <details>
+          <summary>Da li meni mogu sam da menjam?</summary>
+          <p>Može i tako, ako želite. Podrazumevano izmene radimo mi, jer je
+            vlasniku lokala brže da pošalje poruku nego da uči novi alat.</p>
+        </details>
+        <details>
+          <summary>Mogu li da zadržim svoj domen?</summary>
+          <p>Možete. Ako lokal već ima domen, meni postavljamo na njega umesto na
+            našu adresu.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta" id="kontakt" aria-labelledby="kontakt-naslov">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Kontakt</p>
+        <h2 class="section__title" id="kontakt-naslov">Pošaljite svoj meni i vidite kako izgleda</h2>
+        <p class="section__lead">
+          Pošaljite postojeći meni — slika ili PDF su dovoljni. Vraćamo vam
+          predlog i cenu, bez obaveze.
+        </p>
+      </div>
+      <div class="cta__actions">
+        <a class="btn btn--primary" href="mailto:kontakt@digitalnimeniji.com?subject=Digitalni%20meni%20za%20moj%20lokal">kontakt@digitalnimeniji.com</a>
+        <a class="btn btn--ghost" href="#primeri">Prvo bih video primere</a>
+      </div>
+    </div>
+  </section>
+
 </main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>&copy; 2026 Digitalni meniji</span>
+    <span><a href="mailto:kontakt@digitalnimeniji.com">kontakt@digitalnimeniji.com</a></span>
+  </div>
+</footer>
 
 </body>
 </html>
