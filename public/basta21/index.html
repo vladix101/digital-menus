@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bašta 21 — meni</title>
   <meta name="description" content="Meni kafea i letnje bašte Bašta 21, Novi Sad — kafa, koktela, pivo, vino i laka hrana.">
-  <link rel="icon" href="/assets/img/brand/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="/assets/img/brand/icon-180.png">
+  <link rel="canonical" href="https://basta21.digitalnimeniji.com/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter:wght@400;500;600&display=swap">
@@ -13,6 +16,9 @@
   <link rel="stylesheet" href="/assets/css/theme-basta21.css">
   <meta property="og:title" content="Bašta 21 — meni">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://basta21.digitalnimeniji.com/">
+  <meta property="og:description" content="Kafe i letnja bašta u centru Novog Sada — kafa, koktela, pivo, vino i laka hrana.">
+  <meta property="og:locale" content="sr_RS">
 </head>
 <body>
 
@@ -147,6 +153,47 @@
 }
 </script>
 <script src="/assets/js/menu.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Bašta 21",
+  "description": "Kafe i letnja bašta u centru Novog Sada — kafa, koktela, pivo, vino i laka hrana.",
+  "url": "https://basta21.digitalnimeniji.com/",
+  "telephone": "+381210000000",
+  "servesCuisine": [
+    "Kafa",
+    "Koktela",
+    "Laka hrana"
+  ],
+  "priceRange": "$",
+  "image": "https://digitalnimeniji.com/assets/img/basta21/crest.svg",
+  "hasMenu": "https://basta21.digitalnimeniji.com/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Zmaj Jovina 21",
+    "addressLocality": "Novi Sad",
+    "addressCountry": "RS"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "08:00",
+      "closes": "01:00"
+    }
+  ]
+}
+</script>
 
 </body>
 </html>

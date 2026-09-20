@@ -12,7 +12,7 @@
  */
 
 /** Fajlovi koje svaki host servira iz korena, isto kao glavni domen. */
-const SHARED_FILES = new Set(['/robots.txt', '/sitemap.xml', '/favicon.ico']);
+const SHARED_FILES = new Set(['/robots.txt', '/sitemap.xml', '/favicon.ico', '/site.webmanifest']);
 
 /** Poddomen lokala, ili null kada zahtev ide na glavni domen. */
 function venueLabel(hostname, apexHost) {

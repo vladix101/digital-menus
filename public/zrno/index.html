@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kafeterija Zrno — meni</title>
   <meta name="description" content="Meni kafeterije i pržionice Zrno, Niš — filter kafa, espresso, domaći kolači i doručak.">
-  <link rel="icon" href="/assets/img/brand/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="/assets/img/brand/icon-180.png">
+  <link rel="canonical" href="https://zrno.digitalnimeniji.com/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap">
@@ -13,6 +16,9 @@
   <link rel="stylesheet" href="/assets/css/theme-zrno.css">
   <meta property="og:title" content="Kafeterija Zrno — meni">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zrno.digitalnimeniji.com/">
+  <meta property="og:description" content="Specialty pržionica i kafeterija u Nišu — filter kafa, espresso, doručak i domaći kolači.">
+  <meta property="og:locale" content="sr_RS">
 </head>
 <body>
 
@@ -138,6 +144,54 @@
 }
 </script>
 <script src="/assets/js/menu.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Kafeterija Zrno",
+  "description": "Specialty pržionica i kafeterija u Nišu — filter kafa, espresso, doručak i domaći kolači.",
+  "url": "https://zrno.digitalnimeniji.com/",
+  "telephone": "+381180000000",
+  "servesCuisine": [
+    "Kafa",
+    "Doručak",
+    "Kolači"
+  ],
+  "priceRange": "$",
+  "image": "https://digitalnimeniji.com/assets/img/zrno/crest.svg",
+  "hasMenu": "https://zrno.digitalnimeniji.com/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Obrenovićeva 14",
+    "addressLocality": "Niš",
+    "addressCountry": "RS"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "07:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "08:00",
+      "closes": "20:00"
+    }
+  ]
+}
+</script>
 
 </body>
 </html>
