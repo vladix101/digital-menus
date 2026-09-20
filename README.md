@@ -82,7 +82,13 @@ Otvorite `public/<lokal>/index.html` i menjajte samo JSON na dnu fajla.
 3. Napravite `public/assets/css/theme-kod-mice.css` (najlakše kopijom
    postojeće teme) i `public/assets/img/kod-mice/crest.svg` — znak u bojama te
    teme. Povežite oba u stranici, zajedno sa fontovima koje tema koristi.
-4. Dodajte red u spisak u `public/index.html`.
+4. Dodajte karticu u sekciju primera u `public/index.html`, ako lokal treba da
+   stoji na glavnom sajtu.
+
+Stranice lokala nose `noindex` — do njih se dolazi QR kodom, a ne pretragom,
+pa se ne takmiče sa glavnim sajtom. Ako neki lokal ipak želi da bude u Google
+pretrazi, promenite mu tu oznaku u `index, follow` i dodajte njegovu adresu u
+`public/sitemap.xml`.
 
 U Cloudflare-u ne treba ništa da se menja — zvezdasta ruta već hvata svaki
 poddomen.
