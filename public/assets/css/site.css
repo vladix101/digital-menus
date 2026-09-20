@@ -632,8 +632,8 @@ p { margin: 0; }
 /* Potezi su kratki i brzi, pauze duge — tako se stigne pročitati šta prođe. */
 @keyframes listanje {
   0%, 12%   { transform: translateY(0); }
-  24%, 49%  { transform: translateY(-166px); }
-  61%, 100% { transform: translateY(-332px); }
+  22%, 49%  { transform: translateY(-166px); }
+  59%, 100% { transform: translateY(-332px); }
 }
 
 /* Traka prati dokle je lista stigla: Kafa, pa Kokteli, pa Pivo. */
@@ -646,6 +646,6 @@ p { margin: 0; }
 .hero__device.is-demo .device__pill--3,
 .hero__device.is-demo .device__label--3 { animation: kategorija-3 6.5s linear .45s forwards; }
 
-@keyframes kategorija-1 { 0%, 21% { opacity: 1; } 27%, 100% { opacity: 0; } }
-@keyframes kategorija-2 { 0%, 21% { opacity: 0; } 27%, 58% { opacity: 1; } 64%, 100% { opacity: 0; } }
-@keyframes kategorija-3 { 0%, 58% { opacity: 0; } 64%, 100% { opacity: 1; } }
+@keyframes kategorija-1 { 0%, 19% { opacity: 1; } 25%, 100% { opacity: 0; } }
+@keyframes kategorija-2 { 0%, 19% { opacity: 0; } 25%, 56% { opacity: 1; } 62%, 100% { opacity: 0; } }
+@keyframes kategorija-3 { 0%, 56% { opacity: 0; } 62%, 100% { opacity: 1; } }
