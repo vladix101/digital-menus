@@ -616,3 +616,27 @@ p { margin: 0; }
 
 .error-page img { width: 96px; height: 96px; margin: 0 auto 1.5rem; filter: drop-shadow(0 0 12px rgb(255 127 0 / 45%)); }
 .error-page h1 { font-size: clamp(1.6rem, 5vw, 2.4rem); margin-bottom: .75rem; }
+
+/* --- Telefon koji se sam prolista ---------------------------------------- */
+
+/* Pokreće se jednom, kad telefon uđe u vidno polje. Nije petlja: petlja bi
+   vukla pogled na sebe kroz celu posetu. Bez JavaScripta i uz zahtev za manje
+   pokreta ostaje mirna slika sa prvom kategorijom, što je ispravno stanje. */
+
+.hero__device.is-demo .device__list { animation: listanje 4.6s var(--ease-soft) .45s forwards; }
+
+@keyframes listanje {
+  0%, 12%   { transform: translateY(0); }
+  42%, 58%  { transform: translateY(-120px); }
+  88%, 100% { transform: translateY(-232px); }
+}
+
+/* Aktivna kategorija se menja u trenutku kad lista pređe na koktele. */
+.hero__device.is-demo .device__pill--1,
+.hero__device.is-demo .device__label--1 { animation: kategorija-gasi 4.6s linear .45s forwards; }
+
+.hero__device.is-demo .device__pill--2,
+.hero__device.is-demo .device__label--2 { animation: kategorija-pali 4.6s linear .45s forwards; }
+
+@keyframes kategorija-gasi { 0%, 40% { opacity: 1; } 50%, 100% { opacity: 0; } }
+@keyframes kategorija-pali { 0%, 40% { opacity: 0; } 50%, 100% { opacity: 1; } }

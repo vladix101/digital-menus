@@ -82,48 +82,79 @@
       </div>
 
       <!-- Telefon sa menijem u brend bojama — pokazuje proizvod bez fotografije. -->
-      <svg class="hero__device" viewBox="0 0 280 560" role="img" aria-label="Telefon sa otvorenim digitalnim menijem">
+      <svg class="hero__device" viewBox="0 0 280 560" role="img" aria-label="Telefon sa otvorenim digitalnim menijem koji se lista">
+        <defs>
+          <clipPath id="ekran"><rect x="20" y="192" width="240" height="320"/></clipPath>
+        </defs>
+
         <rect x="8" y="8" width="264" height="544" rx="38" fill="#2a2a2a" stroke="#ff7f00" stroke-width="1.5" opacity=".95"/>
         <rect x="20" y="20" width="240" height="520" rx="30" fill="#202020"/>
         <rect x="20" y="20" width="240" height="134" rx="30" fill="#2a2a2a"/>
         <rect x="112" y="32" width="56" height="6" rx="3" fill="#3a3a3a"/>
-
         <image href="/assets/img/brand/logo-96.png" x="112" y="46" width="56" height="56"/>
-
         <text x="140" y="118" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#f2f2f2">Vaš lokal</text>
         <text x="140" y="136" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" fill="#999" letter-spacing="1.5">08–01 h · CENTAR</text>
 
-        <g font-family="Inter, sans-serif" font-size="9">
-          <rect x="34" y="168" width="52" height="20" rx="10" fill="rgba(255,127,0,0.16)" stroke="#ff7f00"/>
-          <text x="60" y="182" text-anchor="middle" fill="#ffaa45">Kafa</text>
-          <text x="104" y="182" fill="#999">Koktela</text>
-          <text x="156" y="182" fill="#999">Pivo</text>
-          <text x="196" y="182" fill="#999">Hrana</text>
+        <!-- Ponuda klizi ispod trake sa kategorijama, kao na pravom meniju. -->
+        <g clip-path="url(#ekran)">
+          <g class="device__list">
+          <text x="34" y="224" font-family="Georgia, serif" font-size="11" fill="#f2f2f2">Espresso</text>
+          <text x="246" y="224" text-anchor="end" font-family="Inter, sans-serif" font-size="10.5" font-weight="600" fill="#ff7f00">180</text>
+          <text x="34" y="236" font-family="Inter, sans-serif" font-size="7.5" fill="#999">Jednostruki, sa čašom vode</text>
+          <path d="M34 244h212" stroke="#3a3a3a" stroke-width="1"/>
+          <text x="34" y="264" font-family="Georgia, serif" font-size="11" fill="#f2f2f2">Cappuccino</text>
+          <text x="246" y="264" text-anchor="end" font-family="Inter, sans-serif" font-size="10.5" font-weight="600" fill="#ff7f00">280</text>
+          <text x="34" y="276" font-family="Inter, sans-serif" font-size="7.5" fill="#999">Klasičan odnos kafe i mleka</text>
+          <path d="M34 284h212" stroke="#3a3a3a" stroke-width="1"/>
+          <text x="34" y="304" font-family="Georgia, serif" font-size="11" fill="#f2f2f2">Domaća limunada</text>
+          <text x="246" y="304" text-anchor="end" font-family="Inter, sans-serif" font-size="10.5" font-weight="600" fill="#ff7f00">320</text>
+          <text x="34" y="316" font-family="Inter, sans-serif" font-size="7.5" fill="#999">Limun, nana, đumbir, med</text>
+          <path d="M34 324h212" stroke="#3a3a3a" stroke-width="1"/>
+          <text x="34" y="344" font-family="Georgia, serif" font-size="11" fill="#f2f2f2">Aperol spritz</text>
+          <text x="246" y="344" text-anchor="end" font-family="Inter, sans-serif" font-size="10.5" font-weight="600" fill="#ff7f00">560</text>
+          <text x="34" y="356" font-family="Inter, sans-serif" font-size="7.5" fill="#999">Aperol, prosecco, soda</text>
+          <path d="M34 364h212" stroke="#3a3a3a" stroke-width="1"/>
+          <text x="34" y="384" font-family="Georgia, serif" font-size="11" fill="#f2f2f2">Mojito</text>
+          <text x="246" y="384" text-anchor="end" font-family="Inter, sans-serif" font-size="10.5" font-weight="600" fill="#ff7f00">580</text>
+          <text x="34" y="396" font-family="Inter, sans-serif" font-size="7.5" fill="#999">Rum, nana, limeta, soda</text>
+          <path d="M34 404h212" stroke="#3a3a3a" stroke-width="1"/>
+          <text x="34" y="424" font-family="Georgia, serif" font-size="11" fill="#f2f2f2">Gin tonic</text>
+          <text x="246" y="424" text-anchor="end" font-family="Inter, sans-serif" font-size="10.5" font-weight="600" fill="#ff7f00">600</text>
+          <text x="34" y="436" font-family="Inter, sans-serif" font-size="7.5" fill="#999">Gin, tonik, grejpfrut</text>
+          <path d="M34 444h212" stroke="#3a3a3a" stroke-width="1"/>
+          <text x="34" y="464" font-family="Georgia, serif" font-size="11" fill="#f2f2f2">Točeno pivo</text>
+          <text x="246" y="464" text-anchor="end" font-family="Inter, sans-serif" font-size="10.5" font-weight="600" fill="#ff7f00">340</text>
+          <text x="34" y="476" font-family="Inter, sans-serif" font-size="7.5" fill="#999">Lager iz lokalne pivare</text>
+          <path d="M34 484h212" stroke="#3a3a3a" stroke-width="1"/>
+          <text x="34" y="504" font-family="Georgia, serif" font-size="11" fill="#f2f2f2">Klub sendvič</text>
+          <text x="246" y="504" text-anchor="end" font-family="Inter, sans-serif" font-size="10.5" font-weight="600" fill="#ff7f00">720</text>
+          <text x="34" y="516" font-family="Inter, sans-serif" font-size="7.5" fill="#999">Piletina, slanina, uz pomfrit</text>
+          <path d="M34 524h212" stroke="#3a3a3a" stroke-width="1"/>
+          <text x="34" y="544" font-family="Georgia, serif" font-size="11" fill="#f2f2f2">Pljeskavica</text>
+          <text x="246" y="544" text-anchor="end" font-family="Inter, sans-serif" font-size="10.5" font-weight="600" fill="#ff7f00">690</text>
+          <text x="34" y="556" font-family="Inter, sans-serif" font-size="7.5" fill="#999">200 g, uz kajmak</text>
+          <path d="M34 564h212" stroke="#3a3a3a" stroke-width="1"/>
+          <text x="34" y="584" font-family="Georgia, serif" font-size="11" fill="#f2f2f2">Čizkejk</text>
+          <text x="246" y="584" text-anchor="end" font-family="Inter, sans-serif" font-size="10.5" font-weight="600" fill="#ff7f00">420</text>
+          <text x="34" y="596" font-family="Inter, sans-serif" font-size="7.5" fill="#999">Sa šumskim voćem</text>
+          <path d="M34 604h212" stroke="#3a3a3a" stroke-width="1"/>
+          </g>
         </g>
 
-        <g font-family="Georgia, serif" font-size="11" fill="#f2f2f2">
-          <text x="34" y="224">Espresso</text>
-          <text x="34" y="264">Cappuccino</text>
-          <text x="34" y="304">Domaća limunada</text>
-          <text x="34" y="344">Aperol spritz</text>
-          <text x="34" y="384">Klub sendvič</text>
-          <text x="34" y="424">Čizkejk</text>
+        <!-- Traka kategorija stoji na mestu i menja aktivnu stavku. -->
+        <rect x="20" y="154" width="240" height="40" fill="#202020"/>
+        <rect class="device__pill device__pill--1" x="34" y="168" width="52" height="20" rx="10" fill="rgba(255,127,0,0.16)" stroke="#ff7f00"/>
+        <rect class="device__pill device__pill--2" x="94" y="168" width="62" height="20" rx="10" fill="rgba(255,127,0,0.16)" stroke="#ff7f00" opacity="0"/>
+        <g font-family="Inter, sans-serif" font-size="9" fill="#999">
+          <text x="60" y="182" text-anchor="middle">Kafa</text>
+          <text x="125" y="182" text-anchor="middle">Koktela</text>
+          <text x="180" y="182" text-anchor="middle">Pivo</text>
+          <text x="222" y="182" text-anchor="middle">Hrana</text>
         </g>
-        <g font-family="Inter, sans-serif" font-size="10.5" font-weight="600" fill="#ff7f00" text-anchor="end">
-          <text x="246" y="224">180</text><text x="246" y="264">280</text><text x="246" y="304">320</text>
-          <text x="246" y="344">560</text><text x="246" y="384">720</text><text x="246" y="424">420</text>
-        </g>
-        <g font-family="Inter, sans-serif" font-size="7.5" fill="#999">
-          <text x="34" y="236">Jednostruki, sa čašom vode</text>
-          <text x="34" y="276">Klasičan odnos kafe i mleka</text>
-          <text x="34" y="316">Limun, nana, đumbir, med</text>
-          <text x="34" y="356">Aperol, prosecco, soda</text>
-          <text x="34" y="396">Piletina, slanina, uz pomfrit</text>
-          <text x="34" y="436">Sa šumskim voćem</text>
-        </g>
-        <g stroke="#3a3a3a" stroke-width="1">
-          <path d="M34 244h212M34 284h212M34 324h212M34 364h212M34 404h212"/>
-        </g>
+        <text class="device__label device__label--1" x="60" y="182" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#ffaa45">Kafa</text>
+        <text class="device__label device__label--2" x="125" y="182" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#ffaa45" opacity="0">Koktela</text>
+
+        <rect x="20" y="512" width="240" height="28" fill="#202020"/>
         <rect x="104" y="520" width="72" height="4" rx="2" fill="#3a3a3a"/>
       </svg>
     </div>

@@ -6,13 +6,28 @@
  * posmatranje se ni ne pokreće.
  */
 (() => {
-  const items = document.querySelectorAll('[data-reveal]');
-  if (!items.length) return;
-
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.documentElement.classList.remove('js');
     return;
   }
+
+  // Telefon se jednom prolista kad uđe u vidno polje — pokazuje da je meni
+  // dugačak i da traka sa kategorijama prati čitanje.
+  const device = document.querySelector('.hero__device');
+  if (device) {
+    const demo = new IntersectionObserver(
+      (entries) => {
+        if (!entries[0].isIntersecting) return;
+        device.classList.add('is-demo');
+        demo.disconnect();
+      },
+      { threshold: 0.4 },
+    );
+    demo.observe(device);
+  }
+
+  const items = document.querySelectorAll('[data-reveal]');
+  if (!items.length) return;
 
   // Deca grupe ulaze jedno za drugim, da red bude čitljiv a ne da sve blesne.
   document.querySelectorAll('[data-reveal-group]').forEach((group) => {
