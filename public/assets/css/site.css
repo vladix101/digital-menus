@@ -197,20 +197,23 @@ p { margin: 0; }
 
 .topbar { position: relative; z-index: 3; padding-block: 1rem; }
 
-.topbar .wrap { display: flex; align-items: center; gap: 1.25rem; }
+.topbar .wrap { display: flex; align-items: center; gap: .7rem; }
+
+@media (min-width: 34rem) { .topbar .wrap { gap: 1.25rem; } }
 
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: .7rem;
+  gap: .55rem;
   text-decoration: none;
   color: var(--text);
   margin-right: auto;
+  min-width: 0;
 }
 
 .brand__mark {
-  width: 40px;
-  height: 40px;
+  width: 34px;
+  height: 34px;
   flex: none;
   filter: drop-shadow(0 0 8px rgb(255 127 0 / 45%));
   transition: filter var(--dur-card) var(--ease-out), transform var(--dur-card) var(--ease-out);
@@ -223,13 +226,17 @@ p { margin: 0; }
 
 .brand__name {
   font-family: var(--font-display);
-  font-size: 1.08rem;
+  font-size: clamp(.95rem, 3.4vw, 1.08rem);
   font-weight: 600;
   letter-spacing: .01em;
-  line-height: 1.1;
+  line-height: 1.15;
+  /* Ime mora da stane u jedan red; na uskom ekranu se radije skrati. */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.brand__name span { display: block; font-family: var(--font-body); font-size: .66rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--primary); }
+.brand__name span { display: none; font-family: var(--font-body); font-size: .66rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--primary); }
 
 .topnav { display: none; gap: 1.55rem; }
 
@@ -255,6 +262,12 @@ p { margin: 0; }
 
 .topnav a:hover { color: var(--text); }
 .topnav a:hover::after { transform: scaleX(1); }
+
+@media (min-width: 34rem) {
+  .brand { gap: .7rem; }
+  .brand__mark { width: 40px; height: 40px; }
+  .brand__name span { display: block; }
+}
 
 @media (min-width: 62rem) { .topnav { display: flex; } }
 
