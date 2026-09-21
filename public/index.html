@@ -10,9 +10,41 @@
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta name="theme-color" content="#202020">
 
+  <script>
+    /* Uvodni ekran: znak stoji dok se stranica ne učita, pa se skloni.
+       Ceo život ekrana je ovde, iznad <body>, iz dva razloga: pali se pre
+       prvog crtanja (bez bleska sadržaja) i gasi se i onda kada se glavna
+       skripta ne učita. Kočnica na 3.5 s znači da spora slika ili font ne
+       mogu da zadrže gosta pred znakom. */
+    (() => {
+      const html = document.documentElement;
+      html.classList.add('js', 'uvod-radi');
+
+      const pocetak = Date.now();
+      let gotovo = false;
+
+      const zatvori = () => {
+        if (gotovo) return;
+        gotovo = true;
+        html.classList.remove('uvod-radi');
+        html.classList.add('uvod-gotov');
+        // Ekran izlazi iz dokumenta tek kad se pretopi, da ne odseče prelaz.
+        setTimeout(() => document.getElementById('uvodnik')?.remove(), 700);
+      };
+
+      // Najmanje pola sekunde: kad je stranica u kešu, znak ne sme da blesne.
+      addEventListener('load', () => {
+        setTimeout(zatvori, Math.max(0, 550 - (Date.now() - pocetak)));
+      }, { once: true });
+
+      setTimeout(zatvori, 3500);
+    })();
+  </script>
+
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/assets/img/brand/icon-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="/assets/img/brand/icon-180.png">
+  <link rel="preload" as="image" href="/assets/img/brand/logo-256.png">
   <link rel="manifest" href="/site.webmanifest">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,10 +68,15 @@
   <meta name="twitter:title" content="Digitalni Meniji — QR meni za kafiće i restorane">
   <meta name="twitter:description" content="Gost skenira QR kôd sa stola i meni se otvara za dve sekunde. Konobar ne nosi menije.">
   <meta name="twitter:image" content="https://digitalnimeniji.com/assets/img/brand/og-image.png">
-
-  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
+
+<!-- Uvodni ekran; aria-hidden jer je ukras, sadržaj stranice je ispod njega. -->
+<div class="uvodnik" id="uvodnik" aria-hidden="true">
+  <img class="uvodnik__znak" src="/assets/img/brand/logo-256.png" alt="" width="112" height="112" fetchpriority="high">
+  <span class="uvodnik__ime">Digitalni Meniji</span>
+  <span class="uvodnik__traka"></span>
+</div>
 
 <header class="hero">
   <div class="topbar">
