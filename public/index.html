@@ -14,9 +14,14 @@
     /* Uvodni ekran: znak stoji dok se stranica ne učita, pa se skloni.
        Ceo život ekrana je ovde, iznad <body>, iz dva razloga: pali se pre
        prvog crtanja (bez bleska sadržaja) i gasi se i onda kada se glavna
-       skripta ne učita. Kočnica na 3.5 s znači da spora slika ili font ne
-       mogu da zadrže gosta pred znakom. */
+       skripta ne učita. */
     (() => {
+      // Znak se zadrži toliko da se vidi ceo jedan udah, i kad je stranica
+      // već u kešu. Kočnica je gornja granica: spora slika ili font ne mogu
+      // da zadrže gosta pred znakom duže od toga.
+      const NAJMANJE = 1400;
+      const KOCNICA = 4200;
+
       const html = document.documentElement;
       html.classList.add('js', 'uvod-radi');
 
@@ -32,12 +37,11 @@
         setTimeout(() => document.getElementById('uvodnik')?.remove(), 700);
       };
 
-      // Najmanje pola sekunde: kad je stranica u kešu, znak ne sme da blesne.
       addEventListener('load', () => {
-        setTimeout(zatvori, Math.max(0, 550 - (Date.now() - pocetak)));
+        setTimeout(zatvori, Math.max(0, NAJMANJE - (Date.now() - pocetak)));
       }, { once: true });
 
-      setTimeout(zatvori, 3500);
+      setTimeout(zatvori, KOCNICA);
     })();
   </script>
 
