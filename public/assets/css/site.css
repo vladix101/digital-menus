@@ -150,6 +150,93 @@ p { margin: 0; }
   .js [data-reveal] { opacity: 1; transform: none; filter: none; }
 }
 
+/* ==========================================================================
+   Uvodni ekran — znak dok se stranica učitava.
+   Postoji samo uz JavaScript i sam se sklanja; bez njega (ili ako skripta
+   ne stigne) stranica se vidi odmah, jer se ekran uključuje klasom na <html>.
+   ========================================================================== */
+
+.uvodnik { display: none; }
+
+.js .uvodnik {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 1.15rem;
+  background: var(--bg);
+  transition: opacity 420ms var(--ease-soft), visibility 0s linear 420ms;
+}
+
+/* Dok ekran stoji, iza njega se ne skroluje. */
+.uvod-radi, .uvod-radi body { overflow: hidden; }
+
+.js.uvod-gotov .uvodnik { opacity: 0; visibility: hidden; pointer-events: none; }
+
+.uvodnik__znak {
+  width: clamp(88px, 22vw, 112px);
+  height: auto;
+  animation: uvodnik-dah 1.7s var(--ease-soft) infinite;
+}
+
+.uvodnik__ime {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: var(--text);
+  animation: uvodnik-ulaz 520ms var(--ease-out) 120ms backwards;
+}
+
+/* Traka ne meri napredak nego pokazuje da se nešto dešava — zato putuje. */
+.uvodnik__traka {
+  width: 132px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.uvodnik__traka::after {
+  content: "";
+  display: block;
+  width: 45%;
+  height: 100%;
+  border-radius: 2px;
+  background: var(--gradient);
+  box-shadow: var(--glow-sm);
+  animation: uvodnik-klizi 1.15s var(--ease-soft) infinite;
+}
+
+/* Znak diše kao neonska reklama: svetlo jača i popušta, bez treptaja. */
+@keyframes uvodnik-dah {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 12px rgb(255 127 0 / 35%));
+  }
+  50% {
+    transform: scale(1.045);
+    filter: drop-shadow(0 0 26px rgb(255 127 0 / 75%));
+  }
+}
+
+@keyframes uvodnik-ulaz {
+  from { opacity: 0; transform: translateY(6px); }
+}
+
+@keyframes uvodnik-klizi {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(222%); }
+}
+
+/* Uz zahtev za manje pokreta ostaje miran znak, bez disanja i klizanja. */
+@media (prefers-reduced-motion: reduce) {
+  .uvodnik__znak { filter: drop-shadow(0 0 14px rgb(255 127 0 / 45%)); }
+  .uvodnik__traka { display: none; }
+}
+
 /* --- Dugmad --------------------------------------------------------------- */
 
 .btn {
@@ -212,8 +299,10 @@ p { margin: 0; }
 }
 
 .brand__mark {
-  width: 34px;
-  height: 34px;
+  /* Znak je u krugu, pa mu treba koji piksel više nego ranijem — ispod 36px
+     se unutrašnji crtež slepi. */
+  width: 38px;
+  height: 38px;
   flex: none;
   filter: drop-shadow(0 0 8px rgb(255 127 0 / 45%));
   transition: filter var(--dur-card) var(--ease-out), transform var(--dur-card) var(--ease-out);
@@ -265,7 +354,7 @@ p { margin: 0; }
 
 @media (min-width: 34rem) {
   .brand { gap: .7rem; }
-  .brand__mark { width: 40px; height: 40px; }
+  .brand__mark { width: 44px; height: 44px; }
   .brand__name span { display: block; }
 }
 

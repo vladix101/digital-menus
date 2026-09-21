@@ -106,6 +106,17 @@ jer saobraćaj preuzima Worker:
 
 Zvezdasti zapis je ono što omogućava da svaki novi lokal odmah radi.
 
+## Izmena slika i stilova
+
+Sve pod `/assets/` se kešira godinu dana kao `immutable` (vidi `public/_headers`).
+Ako se fajl promeni a ime ostane isto, posetilac koji ga već ima u kešu i dalje
+vidi staru verziju. Zato brend slike u referencama nose `?v=N` — kad izmenite
+sliku, podignite taj broj svuda gde se pominje:
+
+```bash
+grep -rn "assets/img/brand" public
+```
+
 ## Deploy
 
 Ručno:
