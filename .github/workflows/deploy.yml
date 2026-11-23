@@ -1,0 +1,29 @@
+# Objava sajta na Cloudflare Workers pri svakom pushu na main.
+# Token stoji kao tajna repozitorijuma: Settings -> Secrets and variables ->
+# Actions -> CLOUDFLARE_API_TOKEN (token po šablonu "Edit Cloudflare Workers").
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Dve objave odjednom bi se gazile; novija čeka da starija završi.
+concurrency:
+  group: deploy-workers
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Projekat nema build korak ni lockfile, pa wrangler ide direktno.
+      - run: npx --yes wrangler@4 deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

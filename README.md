@@ -115,15 +115,16 @@ npm install
 npx wrangler deploy
 ```
 
-Preko Git-a (Workers Builds) — Compute → Workers → izaberite ovaj projekat →
-Settings → Builds → Connect repository:
+Preko Git-a (GitHub Actions) — `.github/workflows/deploy.yml` objavljuje sajt
+pri svakom pushu na `main`. Da bi radilo, u repozitorijumu mora da stoji token:
+Settings → Secrets and variables → Actions → New repository secret, ime
+`CLOUDFLARE_API_TOKEN`, vrednost token napravljen po šablonu „Edit Cloudflare
+Workers". Objavu je moguće pokrenuti i ručno, sa Actions → Deploy → Run workflow.
 
-| Podešavanje | Vrednost |
-| --- | --- |
-| Build command | *(prazno)* |
-| Deploy command | `npx wrangler deploy` |
-
-Svaki push na `main` objavljuje novu verziju.
+Worker se zove `digital-menus` i to ime stoji u `wrangler.jsonc`. Mora da se
+poklapa sa Workerom na nalogu — rute `digitalnimeniji.com/*` i
+`*.digitalnimeniji.com/*` vode na njega, pa bi drugo ime napravilo nov, prazan
+Worker umesto da ažurira postojeći.
 
 ## Lokalni pregled
 

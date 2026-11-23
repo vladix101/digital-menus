@@ -1,5 +1,7 @@
 {
-  "name": "digitalni-meniji",
+  // Ime Workera koji servira digitalnimeniji.com. Mora da se poklapa sa
+  // postojećim Workerom na nalogu, inače deploy pravi drugi, prazan Worker.
+  "name": "digital-menus",
   "main": "src/index.js",
   "compatibility_date": "2026-09-18",
 
