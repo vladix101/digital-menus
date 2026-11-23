@@ -74,6 +74,17 @@ Otvorite `public/<lokal>/index.html` i menjajte samo JSON na dnu fajla.
   `[{ "label": "0,3 l", "value": 260 }, { "label": "0,5 l", "value": 340 }]`
 - Oznake `preporuka`, `novo` i `kuća preporučuje` dobijaju istaknut badž.
 
+## AI agent na sajtu
+
+Agentplace vidžet stoji kao poslednji `<script>` pre `</body>`, u
+`public/index.html` i `public/404.html` — dakle samo na glavnom sajtu.
+
+Stranice lokala (`public/<lokal>/index.html`) ga namerno nemaju: na meniju
+piše samo ime lokala, bez logotipa i alata platforme, kako i stoji u ponudi.
+
+Sam agent se podešava na `agentplace.io`; u repozitorijumu su samo
+`data-agent-url` i `data-controls` u tom tagu.
+
 ## Dodavanje novog lokala
 
 1. Kopirajte mapu postojećeg lokala pod novim imenom, npr.
