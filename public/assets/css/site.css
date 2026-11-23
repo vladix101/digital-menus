@@ -673,10 +673,31 @@ p { margin: 0; }
 }
 
 .agentplace-embed-host iframe {
-  /* Bez ovoga pregledač podlogu iframe-a crta belo, što je ona traka. */
-  color-scheme: dark;
+  /* Mora da se poklopi sa šemom njihovog dokumenta (svetla, podrazumevana).
+     Kad se šema iframe-a i dokumenta u njemu razlikuju, pregledač ispod
+     iframe-a crta neprozirnu belu podlogu — to je bio beli okvir. Sajt je
+     u tamnoj šemi pa je iframe nasleđivao "dark"; ovde se to vraća. */
+  color-scheme: normal !important;
   background: transparent !important;
   border: 0 !important;
   border-radius: 16px;
   max-width: 100% !important;
+}
+
+.agentplace-embed-dialog[data-mode="expanded"] {
+  top: auto !important; left: auto !important;
+  right: 24px !important; bottom: 24px !important;
+  width: 420px !important; max-width: calc(100vw - 32px) !important;
+  height: 620px !important; max-height: calc(100vh - 48px) !important;
+  border-radius: 16px !important; overflow: hidden !important;
+  border: 2px solid #ff8a00 !important;
+  box-shadow: 0 0 24px rgba(255,138,0,.35) !important;
+}
+@media (max-width: 600px) {
+  .agentplace-embed-dialog[data-mode="expanded"] {
+    right: 0 !important; bottom: 0 !important;
+    width: 100vw !important; max-width: 100vw !important;
+    height: 100vh !important; max-height: 100vh !important;
+    border-radius: 0 !important; border: 0 !important;
+  }
 }
