@@ -74,6 +74,20 @@ Otvorite `public/<lokal>/index.html` i menjajte samo JSON na dnu fajla.
   `[{ "label": "0,3 l", "value": 260 }, { "label": "0,5 l", "value": 340 }]`
 - Oznake `preporuka`, `novo` i `kuća preporučuje` dobijaju istaknut badž.
 
+## Keširanje — zašto izmena CSS-a ne stigne do posetioca
+
+Sve pod `/assets/` kešira se godinu dana kao `immutable` (vidi `public/_headers`).
+Ako se fajl promeni a ime ostane isto, pregledač i dalje crta staru verziju.
+Zato `site.css` i `site.js` u stranicama nose `?v=N` — kad ih izmenite,
+podignite taj broj svuda gde se pominju:
+
+```bash
+grep -rn "site.css\|site.js" public
+```
+
+Slike pod `/assets/img/` imaju isti problem; ako menjate neku a ime ostaje,
+dodajte i njoj `?v=N` u referencama.
+
 ## AI agent na sajtu
 
 Agentplace vidžet stoji kao poslednji `<script>` pre `</body>`, u
