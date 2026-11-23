@@ -1,11 +1,12 @@
-# Objava sajta na Cloudflare Workers pri svakom pushu na main.
-# Token stoji kao tajna repozitorijuma: Settings -> Secrets and variables ->
-# Actions -> CLOUDFLARE_API_TOKEN (token po šablonu "Edit Cloudflare Workers").
+# Rezervna, ručna objava — redovnu objavu radi Cloudflare Workers Builds,
+# koji sam povlači sa Git-a i ne traži nikakvu tajnu u GitHub-u.
+#
+# Ovaj workflow se pokreće samo ručno (Actions -> Deploy -> Run workflow) i
+# tek tada traži tajnu CLOUDFLARE_API_TOKEN. Dok je nema, ne radi ništa i ne
+# obeležava commite crvenim.
 name: Deploy
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 # Dve objave odjednom bi se gazile; novija čeka da starija završi.
