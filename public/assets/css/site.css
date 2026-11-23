@@ -651,91 +651,32 @@ p { margin: 0; }
 @keyframes kategorija-3 { 0%, 56% { opacity: 0; } 62%, 100% { opacity: 1; } }
 
 /* ==========================================================================
-   AI agent (Agentplace) — dugme za ćaskanje.
-   Vidžet ubacuje svoje dugme na dno stranice i podrazumevano ga razvuče u
-   svetlu traku preko celog ekrana, što na tamnoj podlozi bode oči. Ovde
-   dobija mesto u donjem desnom uglu i boje sajta.
+   AI agent (Agentplace) — kutija sa vidžetom.
+   Sam vidžet se crta u iframe-u sa njihovog domena, pa unutra ne možemo:
+   pregledač ne da CSS-u preko granice dokumenta. Izgled dugmeta se zato
+   podešava kod njih; odavde se može samo kutija koja taj iframe drži.
 
-   Selektori su njihovi (.embed-*), pa su zato i !important: njihov stil
-   dolazi iz skripte, posle ovog fajla. Pravila važe samo dok je dugme
-   sklopljeno (data-launcher="true"); kada se razgovor otvori, raspored
-   prepuštamo njima da im ne polomimo prozor.
+   Namerno se ne diraju visina i širina iframe-a — njih njihova skripta menja
+   kad se razgovor otvori, pa bi fiksna mera odsekla prozor ćaskanja.
    ========================================================================== */
 
-.embed-controls[data-launcher="true"] {
+.agentplace-embed-host {
   position: fixed !important;
   inset: auto clamp(.9rem, 3vw, 1.5rem)
          calc(clamp(.9rem, 3vw, 1.5rem) + env(safe-area-inset-bottom, 0px)) auto !important;
   width: auto !important;
-  max-width: calc(100vw - 2rem) !important;
-  padding: 0 !important;
+  max-width: min(420px, calc(100vw - 1.8rem)) !important;
   background: none !important;
   border: 0 !important;
-  box-shadow: none !important;
-  /* Iznad sadržaja, ispod uvodnog ekrana i eventualnih modala. */
+  /* Iznad sadržaja, ispod uvodnih slojeva. */
   z-index: 150;
 }
 
-.embed-controls[data-launcher="true"] .embed-launcher-group {
-  gap: .5rem;
-  justify-content: flex-end;
-}
-
-/* Dugme je pilula u bojama sajta, sa istim neonom kao glavno dugme. */
-.embed-controls[data-launcher="true"] :is(.embed-launcher, .embed-microphone-launcher) {
-  background: var(--surface) !important;
-  color: var(--text) !important;
-  border: 1px solid var(--primary) !important;
-  box-shadow: var(--glow-sm);
-  font-family: var(--font-body);
-  font-weight: 600;
-  cursor: pointer;
-  transition:
-    transform var(--dur-hover) var(--ease-out),
-    box-shadow var(--dur-hover) var(--ease-soft),
-    background var(--dur-hover) var(--ease-soft);
-}
-
-.embed-controls[data-launcher="true"] .embed-launcher {
-  display: inline-flex !important;
-  align-items: center;
-  gap: .5rem;
-  padding: .72rem 1.15rem !important;
-  border-radius: 999px !important;
-  font-size: .92rem;
-  line-height: 1.2;
-  white-space: nowrap;
-}
-
-.embed-controls[data-launcher="true"] .embed-launcher svg { color: var(--primary); }
-
-.embed-controls[data-launcher="true"] .embed-microphone-launcher {
-  display: inline-grid !important;
-  place-items: center;
-  width: 2.85rem !important;
-  height: 2.85rem !important;
-  padding: 0 !important;
-  border-radius: 50% !important;
-  color: var(--primary) !important;
-}
-
-.embed-controls[data-launcher="true"] :is(.embed-launcher, .embed-microphone-launcher):hover {
-  transform: translateY(-1px);
-  box-shadow: var(--glow-md);
-}
-
-.embed-controls[data-launcher="true"] :is(.embed-launcher, .embed-microphone-launcher):active {
-  transform: translateY(0);
-}
-
-/* Na telefonu dugme mora da ostane dugme, a ne da pojede pola ekrana. */
-@media (max-width: 30rem) {
-  .embed-controls[data-launcher="true"] .embed-launcher {
-    padding: .62rem .9rem !important;
-    font-size: .85rem;
-  }
-  .embed-controls[data-launcher="true"] .embed-microphone-launcher {
-    width: 2.5rem !important;
-    height: 2.5rem !important;
-  }
+.agentplace-embed-host iframe {
+  /* Bez ovoga pregledač podlogu iframe-a crta belo, što je ona traka. */
+  color-scheme: dark;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 16px;
+  max-width: 100% !important;
 }
