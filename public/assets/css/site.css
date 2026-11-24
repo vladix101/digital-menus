@@ -697,10 +697,14 @@ p { margin: 0; }
   border: 2px solid #ff8a00 !important;
   box-shadow: 0 0 24px rgba(255,138,0,.35) !important;
 }
-/* Ivica i sjaj se gase čim zatvaranje krene, da ne ostane prazan okvir. */
+/* Ceo prozor izbledi na svom mestu čim zatvaranje krene. Njihovo dugme se
+   tokom "closing" crta 24px levo i iznad konačnog mesta, pa bi skočilo;
+   ovako se pojavi tek kad se kutija vrati u "collapsed", tačno na svom mestu. */
+.agentplace-embed-dialog { transition: opacity 200ms ease !important; }
 .agentplace-embed-dialog[data-mode="closing"] {
   border-color: transparent !important;
   box-shadow: none !important;
+  opacity: 0 !important;
 }
 /* Na telefonu 100vh je viši od vidljivog dela (traka pregledača), pa je
    zaglavlje sa X-om odlazilo iznad ekrana. dvh prati stvarno vidljivu visinu. */
