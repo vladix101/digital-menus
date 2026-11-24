@@ -684,11 +684,7 @@ p { margin: 0; }
   max-width: 100% !important;
 }
 
-/* Tokom zatvaranja njihova skripta stavlja data-mode="closing" (~850 ms) i
-   vraća kutiju na ceo ekran; zato ista mera važi i za "closing", da prozor
-   ostane na svom mestu dole desno dok se ne zatvori. */
-.agentplace-embed-dialog[data-mode="expanded"],
-.agentplace-embed-dialog[data-mode="closing"] {
+.agentplace-embed-dialog[data-mode="expanded"] {
   top: auto !important; left: auto !important;
   right: 24px !important; bottom: 24px !important;
   width: 420px !important; max-width: calc(100vw - 32px) !important;
@@ -697,17 +693,39 @@ p { margin: 0; }
   border: 2px solid #ff8a00 !important;
   box-shadow: 0 0 24px rgba(255,138,0,.35) !important;
 }
-/* Ceo prozor izbledi na svom mestu čim zatvaranje krene. Njihovo dugme se
-   tokom "closing" crta 24px levo i iznad konačnog mesta, pa bi skočilo;
-   ovako se pojavi tek kad se kutija vrati u "collapsed", tačno na svom mestu. */
-.agentplace-embed-dialog { transition: opacity 200ms ease !important; }
-.agentplace-embed-dialog[data-mode="closing"] {
-  border-color: transparent !important;
-  box-shadow: none !important;
-  opacity: 0 !important;
+
+/* Zatvaranje na računaru. Njihova skripta drži data-mode="closing" oko 850 ms
+   i za to vreme kutiju vraća na ceo ekran. Animacija preuzima meru: prozor
+   prvo izbledi na svom mestu, pa se kutija spusti na meru dugmeta u uglu
+   (ista kao u "collapsed") i dugme se pojavi postepeno, pre kraja zatvaranja.
+   Bez !important, inače animacija ne bi mogla da menja ove vrednosti. */
+@media (min-width: 601px) {
+  .agentplace-embed-dialog[data-mode="closing"] {
+    animation: ap-zatvaranje 850ms linear forwards;
+    border: 0 !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+  }
 }
+
+@keyframes ap-zatvaranje {
+  0%, 24% {
+    top: auto; left: auto; right: 24px; bottom: 24px;
+    width: 420px; height: min(620px, calc(100vh - 48px)); border-radius: 16px;
+  }
+  0% { opacity: 1; }
+  24% { opacity: 0; }
+  25%, 100% {
+    top: auto; left: auto; right: 0; bottom: 0;
+    width: 400px; height: 144px; border-radius: 0;
+  }
+  25% { opacity: 0; }
+  50%, 100% { opacity: 1; }
+}
+
 /* Na telefonu 100vh je viši od vidljivog dela (traka pregledača), pa je
-   zaglavlje sa X-om odlazilo iznad ekrana. dvh prati stvarno vidljivu visinu. */
+   zaglavlje sa X-om odlazilo iznad ekrana. dvh prati stvarno vidljivu visinu.
+   Pri zatvaranju prozor samo izbledi na mestu. */
 @media (max-width: 600px) {
   .agentplace-embed-dialog[data-mode="expanded"],
   .agentplace-embed-dialog[data-mode="closing"] {
@@ -716,5 +734,10 @@ p { margin: 0; }
     height: 100vh !important; max-height: 100vh !important;
     height: 100dvh !important; max-height: 100dvh !important;
     border-radius: 0 !important; border: 0 !important;
+  }
+  .agentplace-embed-dialog { transition: opacity 200ms ease !important; }
+  .agentplace-embed-dialog[data-mode="closing"] {
+    box-shadow: none !important;
+    opacity: 0 !important;
   }
 }
