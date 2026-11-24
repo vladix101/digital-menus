@@ -693,8 +693,26 @@ p { margin: 0; }
   width: 420px !important; max-width: calc(100vw - 32px) !important;
   height: 620px !important; max-height: calc(100vh - 48px) !important;
   border-radius: 16px !important; overflow: hidden !important;
-  border: 2px solid #ff8a00 !important;
-  box-shadow: 0 0 24px rgba(255,138,0,.35) !important;
+  border-width: 2px !important; border-style: solid !important;
+}
+
+/* Narandžasta linija: pri otvaranju se pojavi zajedno sa sadržajem (njihov
+   panel uklizava odozdo, pa linija ne sme da stoji oko praznog okvira),
+   a pri zatvaranju nestaje odmah. Boja i sjaj su bez !important, da bi
+   animacija mogla da ih menja. */
+.agentplace-embed-dialog[data-mode="expanded"] {
+  border-color: #ff8a00;
+  box-shadow: 0 0 24px rgba(255,138,0,.35);
+  animation: ap-linija 350ms ease-out 150ms both;
+}
+
+.agentplace-embed-dialog[data-mode="closing"] {
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+@keyframes ap-linija {
+  from { border-color: transparent; box-shadow: 0 0 0 rgba(255,138,0,0); }
 }
 
 /* Na telefonu 100vh je viši od vidljivog dela (traka pregledača), pa je
@@ -733,6 +751,7 @@ p { margin: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .agentplace-embed-dialog[data-mode="expanded"],
   .agentplace-embed-dialog[data-mode="closing"],
   .agentplace-embed-dialog[data-mode="collapsed"] { animation: none; }
 }
