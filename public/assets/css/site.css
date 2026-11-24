@@ -684,7 +684,11 @@ p { margin: 0; }
   max-width: 100% !important;
 }
 
-.agentplace-embed-dialog[data-mode="expanded"] {
+/* Tokom zatvaranja njihova skripta stavlja data-mode="closing" (~850 ms) i
+   vraća kutiju na ceo ekran; zato ista mera važi i za "closing", da prozor
+   ostane na svom mestu dole desno dok se ne zatvori. */
+.agentplace-embed-dialog[data-mode="expanded"],
+.agentplace-embed-dialog[data-mode="closing"] {
   top: auto !important; left: auto !important;
   right: 24px !important; bottom: 24px !important;
   width: 420px !important; max-width: calc(100vw - 32px) !important;
@@ -693,11 +697,20 @@ p { margin: 0; }
   border: 2px solid #ff8a00 !important;
   box-shadow: 0 0 24px rgba(255,138,0,.35) !important;
 }
+/* Ivica i sjaj se gase čim zatvaranje krene, da ne ostane prazan okvir. */
+.agentplace-embed-dialog[data-mode="closing"] {
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+/* Na telefonu 100vh je viši od vidljivog dela (traka pregledača), pa je
+   zaglavlje sa X-om odlazilo iznad ekrana. dvh prati stvarno vidljivu visinu. */
 @media (max-width: 600px) {
-  .agentplace-embed-dialog[data-mode="expanded"] {
-    right: 0 !important; bottom: 0 !important;
+  .agentplace-embed-dialog[data-mode="expanded"],
+  .agentplace-embed-dialog[data-mode="closing"] {
+    top: 0 !important; right: 0 !important; bottom: 0 !important;
     width: 100vw !important; max-width: 100vw !important;
     height: 100vh !important; max-height: 100vh !important;
+    height: 100dvh !important; max-height: 100dvh !important;
     border-radius: 0 !important; border: 0 !important;
   }
 }
