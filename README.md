@@ -88,6 +88,20 @@ grep -rn "site.css\|site.js" public
 Slike pod `/assets/img/` imaju isti problem; ako menjate neku a ime ostaje,
 dodajte i njoj `?v=N` u referencama.
 
+## SEO, AI pretraga (GEO/AEO)
+
+- Naslovna cilja frazu **digitalni meni**: nalazi se u `<title>`, `<h1>`,
+  opisu i u sekciji „Šta je digitalni meni?”.
+- `public/sta-je-digitalni-meni/index.html` je vodič za informativne pretrage
+  („šta je digitalni meni”, „kako napraviti digitalni meni”, „QR meni”).
+  Naslovna i vodič se međusobno linkuju.
+- `public/llms.txt` je sažetak sajta za AI asistente (ChatGPT, Claude,
+  Perplexity). Kad se promeni ponuda, kontakt ili primeri, izmenite i njega.
+- Pitanja u JSON-LD (`FAQPage`) moraju da budu ista kao vidljiva pitanja na
+  stranici. Kad dodate ili izmenite pitanje, izmenite ga na oba mesta.
+- Nova stranica ide i u `public/sitemap.xml`, sa datumom u `<lastmod>`.
+- Worker preusmerava `www.digitalnimeniji.com` na glavni domen (301).
+
 ## AI agent na sajtu
 
 Agentplace vidžet stoji kao poslednji `<script>` pre `</body>`, u

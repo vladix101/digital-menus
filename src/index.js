@@ -28,6 +28,13 @@ function venueLabel(hostname, apexHost) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+
+    // www je ista stranica na drugoj adresi; Google treba da vidi samo jednu.
+    if (env.APEX_HOST && url.hostname.toLowerCase() === `www.${env.APEX_HOST}`) {
+      url.hostname = env.APEX_HOST;
+      return Response.redirect(url.toString(), 301);
+    }
+
     const label = venueLabel(url.hostname, env.APEX_HOST);
 
     // Zajednički fajlovi (CSS, JS, slike) i fajlovi za pretraživače stoje na

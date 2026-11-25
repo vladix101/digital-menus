@@ -1,0 +1,36 @@
+# Digitalni Meniji
+
+> Digitalni Meniji (digitalnimeniji.com) izrađuju i održavaju digitalni meni (QR meni) za kafiće, barove i restorane u Srbiji. Gost skenira QR kôd sa stola i meni lokala se otvara u pregledaču telefona za dve sekunde, bez aplikacije. Cene i ponuda se menjaju isti dan, bez ponovne štampe, a QR kôd na stolu ostaje isti.
+
+Jezik sajta je srpski (latinica). Na ćirilici: Дигитални менији — дигитални мени за кафиће и ресторане.
+
+## Osnovno
+
+- [Početna — digitalni meni za kafiće i restorane](https://digitalnimeniji.com/): usluga, kako radi, primeri, šta je uključeno, česta pitanja i kontakt
+- [Šta je digitalni meni i kako ga napraviti](https://digitalnimeniji.com/sta-je-digitalni-meni/): vodič za ugostitelje — definicija, poređenje sa PDF i štampanim menijem, šta meni treba da sadrži, pet koraka izrade, gde postaviti QR kôd, česte greške
+
+## Šta je digitalni meni
+
+Digitalni meni je meni lokala na internet stranici, koju gost otvara skeniranjem QR koda sa stola. Radi u pregledaču telefona, bez aplikacije i bez registracije. Isto se zove i QR meni ili digitalni jelovnik. Za razliku od PDF-a ili slike menija iza QR koda, digitalni meni je stranica složena za ekran telefona, pa se ne zumira.
+
+## Usluga
+
+- Izrada (jednokratno): prekucavanje postojećeg menija (slika, PDF ili tabela) i raspored po kategorijama; dizajn prilagođen karakteru lokala, ne gotov šablon; sopstvena adresa oblika vaslokal.digitalnimeniji.com ili domen lokala; QR kôd u rezoluciji za štampu; opisi, gramaže i oznake (posno, ljuto, preporuka).
+- Održavanje (mesečno): izmene cena i ponude na poziv ili poruku, isti dan; sezonska i praznična ponuda; hosting i domen bez skrivenih troškova; bez ugovorne obaveze i bez naknade za raskid.
+- Za koga: kafići, barovi, restorani, picerije, pivnice, poslastičarnice i bašte u celoj Srbiji. Sve se radi na daljinu.
+- Izrada traje obično dan do dva; restoranski meni sa više od sto stavki nešto duže.
+- Cena zavisi od veličine menija; predlog i tačna cena stižu istog dana kada lokal pošalje sliku menija.
+- Na meniju piše samo ime lokala: bez logotipa platforme, reklama i linkova na druge lokale.
+- Meni radi i kad u lokalu nestane struje ili interneta, jer se otvara preko mobilnog interneta gosta.
+
+## Primeri uživo
+
+- [Bašta 21](https://basta21.digitalnimeniji.com/): kafe i letnja bašta, topla klasika
+- [Trattoria Nona](https://trattoria-nona.digitalnimeniji.com/): italijanski restoran, editorijalni stil
+- [Kafeterija Zrno](https://zrno.digitalnimeniji.com/): specialty pržionica, moderan minimalni stil
+
+## Kontakt
+
+- Telefon i Viber: +381 69 441 1821
+- E-pošta: kontakt@digitalnimeniji.com
+- Instagram: https://www.instagram.com/digitalnimeniji/

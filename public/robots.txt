@@ -1,4 +1,19 @@
+# Pretraživači i AI asistenti su dobrodošli na ceo sajt.
 User-agent: *
+Allow: /
+
+# AI pretraga i asistenti — navedeni izričito, da ih ništa ne isključi.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Bingbot
 Allow: /
 
 Sitemap: https://digitalnimeniji.com/sitemap.xml

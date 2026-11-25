@@ -311,7 +311,19 @@ p { margin: 0; }
 
 @media (min-width: 62rem) { .hero__grid { grid-template-columns: 1.1fr .9fr; } }
 
-.hero__title { font-size: clamp(2.3rem, 6vw, 3.9rem); margin-bottom: 1.15rem; }
+/* H1 nosi ključnu reč ("Digitalni meni za kafiće i restorane") i izgleda kao
+   nadnaslov; slogan ispod je pasus koji izgleda kao naslov. */
+h1.eyebrow { font-family: var(--font-body); line-height: 1.5; }
+
+.hero__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: -0.015em;
+  color: var(--text);
+  font-size: clamp(2.3rem, 6vw, 3.9rem);
+  margin-bottom: 1.15rem;
+}
 
 .hero__title em {
   font-style: italic;
@@ -755,3 +767,151 @@ p { margin: 0; }
   .agentplace-embed-dialog[data-mode="closing"],
   .agentplace-embed-dialog[data-mode="collapsed"] { animation: none; }
 }
+
+/* ==========================================================================
+   Tabela poređenja (naslovna i vodič) i stranica vodiča.
+   ========================================================================== */
+
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+.vs-table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  font-size: .93rem;
+}
+
+.vs-table caption {
+  caption-side: bottom;
+  text-align: left;
+  padding-top: .8rem;
+  font-size: .8rem;
+  color: var(--text-muted);
+}
+
+.vs-table th, .vs-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: .8rem .9rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.vs-table thead th {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.vs-table tbody th { color: var(--text); font-weight: 600; white-space: nowrap; }
+
+/* Poslednja kolona je naša — jedini narandžasti akcenat u tabeli. */
+.vs-table th:last-child, .vs-table td:last-child { color: var(--text); background: rgb(255 127 0 / 7%); }
+.vs-table thead th:last-child { color: var(--primary); }
+
+/* Na telefonu tabela postaje niz kartica: svaki red je jedno svojstvo. */
+@media (max-width: 40rem) {
+  .vs-table { min-width: 0; }
+  .vs-table thead { display: none; }
+  .vs-table caption { display: block; }
+  .vs-table, .vs-table tbody, .vs-table tr, .vs-table th, .vs-table td { display: block; }
+  .vs-table tr { padding-block: .9rem; border-bottom: 1px solid var(--border); }
+  .vs-table th, .vs-table td { border: 0; padding: .2rem 0; }
+  .vs-table tbody th { margin-bottom: .35rem; }
+  .vs-table td { display: flex; gap: 1rem; justify-content: space-between; }
+  .vs-table td::before { content: attr(data-label); color: var(--text-muted); font-size: .85rem; }
+  .vs-table td:last-child { background: none; color: var(--primary-light); }
+}
+
+.section__more { margin-top: 1.5rem; font-size: .95rem; }
+.section__more a, .prose a:not(.btn) { color: var(--primary-light); text-underline-offset: 3px; }
+
+.site-footer__nav { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
+
+/* --- Vodič ---------------------------------------------------------------- */
+
+.article { max-width: 48rem; padding-block: clamp(1.5rem, 5vw, 3rem) clamp(3.5rem, 8vw, 5rem); }
+
+.crumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+  font-size: .82rem;
+  color: var(--text-muted);
+}
+
+.crumbs li + li::before { content: "›"; margin-right: .4rem; }
+.crumbs a { color: var(--text-2); }
+
+.prose h1 { font-size: clamp(2rem, 5.5vw, 3.1rem); margin-bottom: .8rem; }
+.prose h2 { font-size: clamp(1.4rem, 3.4vw, 1.85rem); margin: 2.75rem 0 1rem; }
+.prose h3 { font-size: 1.1rem; margin-bottom: .35rem; }
+.prose p, .prose ul, .prose ol { margin: 0 0 1rem; }
+.prose li { margin-bottom: .45rem; }
+.prose ul, .prose ol { padding-left: 1.25rem; }
+.prose strong { color: var(--text); }
+
+.article__meta { font-size: .85rem; color: var(--text-muted); }
+
+.answer {
+  margin: 2rem 0 1rem;
+  padding: 1.4rem 1.5rem;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--primary);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.prose .answer h2 { font-size: .78rem; font-family: var(--font-body); letter-spacing: .18em; text-transform: uppercase; color: var(--primary); margin: 0 0 .6rem; }
+.answer p { margin: 0; font-size: 1.05rem; }
+
+.checklist { list-style: none; padding-left: 0 !important; }
+.checklist li { position: relative; padding-left: 1.6rem; }
+.checklist li::before {
+  content: "";
+  position: absolute;
+  left: .1rem;
+  top: .5em;
+  width: .7rem;
+  height: .38rem;
+  border-left: 2px solid var(--primary);
+  border-bottom: 2px solid var(--primary);
+  rotate: -45deg;
+}
+
+.steps-list { counter-reset: korak; list-style: none; padding-left: 0 !important; }
+.steps-list li { counter-increment: korak; position: relative; padding-left: 2.8rem; margin-bottom: 1.2rem; }
+.steps-list li::before {
+  content: counter(korak);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.9rem;
+  height: 1.9rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+.steps-list p { margin: 0; }
+
+.prose .faq { margin-top: .5rem; }
+
+.article__cta {
+  margin-top: 3rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.prose .article__cta h2 { margin-top: 0; }
+.article__cta p { color: var(--text-2); }
