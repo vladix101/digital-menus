@@ -11,7 +11,7 @@ Jezik sajta je srpski (latinica). Na ćirilici: Дигитални менији 
 
 ## Šta je digitalni meni
 
-Digitalni meni je meni lokala na internet stranici, koju gost otvara skeniranjem QR koda sa stola. Radi u pregledaču telefona, bez aplikacije i bez registracije. Isto se zove i QR meni ili digitalni jelovnik. Za razliku od PDF-a ili slike menija iza QR koda, digitalni meni je stranica složena za ekran telefona, pa se ne zumira.
+Digitalni meni je meni lokala na internet stranici, koju gost otvara skeniranjem QR koda sa stola. Radi u pregledaču telefona, bez aplikacije i bez registracije. Isto se zove i QR meni, elektronski meni, online meni ili digitalni jelovnik. Za razliku od PDF-a ili slike menija iza QR koda, digitalni meni je stranica složena za ekran telefona, pa se ne zumira.
 
 ## Usluga
 

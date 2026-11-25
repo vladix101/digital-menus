@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://digitalnimeniji.com/</loc>
     <lastmod>2026-11-25</lastmod>
@@ -7,5 +8,8 @@
   <url>
     <loc>https://digitalnimeniji.com/sta-je-digitalni-meni/</loc>
     <lastmod>2026-11-25</lastmod>
+    <image:image><image:loc>https://digitalnimeniji.com/assets/img/primeri/digitalni-meni-basta21.webp</image:loc></image:image>
+    <image:image><image:loc>https://digitalnimeniji.com/assets/img/primeri/digitalni-meni-trattoria-nona.webp</image:loc></image:image>
+    <image:image><image:loc>https://digitalnimeniji.com/assets/img/primeri/digitalni-meni-zrno.webp</image:loc></image:image>
   </url>
 </urlset>

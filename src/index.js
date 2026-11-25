@@ -29,9 +29,14 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    // www je ista stranica na drugoj adresi; Google treba da vidi samo jednu.
-    if (env.APEX_HOST && url.hostname.toLowerCase() === `www.${env.APEX_HOST}`) {
-      url.hostname = env.APEX_HOST;
+    // Jedna adresa po stranici: http i www su ista stranica na drugoj adresi,
+    // pa ih trajno (301) šaljemo na https://digitalnimeniji.com. Lokalni
+    // "wrangler dev" na localhost-u ovo ne dira.
+    const host = url.hostname.toLowerCase();
+    const onOurDomain = env.APEX_HOST && (host === env.APEX_HOST || host.endsWith(`.${env.APEX_HOST}`));
+    if (onOurDomain && (url.protocol === 'http:' || host === `www.${env.APEX_HOST}`)) {
+      url.protocol = 'https:';
+      if (host === `www.${env.APEX_HOST}`) url.hostname = env.APEX_HOST;
       return Response.redirect(url.toString(), 301);
     }
 
@@ -40,7 +45,14 @@ export default {
     // Zajednički fajlovi (CSS, JS, slike) i fajlovi za pretraživače stoje na
     // istom mestu za sve lokale.
     if (!label || url.pathname.startsWith('/assets/') || SHARED_FILES.has(url.pathname)) {
-      return env.ASSETS.fetch(request);
+      const response = await env.ASSETS.fetch(request);
+      // Statični fajlovi dodaju kosu crtu (/vodic -> /vodic/) i skidaju
+      // index.html privremenim preusmerenjem (307). Za pretraživače je to
+      // trajna promena adrese, pa im to i kažemo — 301 prenosi i vrednost linka.
+      if (!label && response.status === 307 && response.headers.has('location')) {
+        return Response.redirect(new URL(response.headers.get('location'), url).toString(), 301);
+      }
+      return response;
     }
 
     url.pathname = `/${label}${url.pathname}`;

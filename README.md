@@ -100,7 +100,12 @@ dodajte i njoj `?v=N` u referencama.
 - Pitanja u JSON-LD (`FAQPage`) moraju da budu ista kao vidljiva pitanja na
   stranici. Kad dodate ili izmenite pitanje, izmenite ga na oba mesta.
 - Nova stranica ide i u `public/sitemap.xml`, sa datumom u `<lastmod>`.
-- Worker preusmerava `www.digitalnimeniji.com` na glavni domen (301).
+- Worker trajno (301) preusmerava `http://` na `https://`, `www` na glavni
+  domen i adrese bez kose crte na adrese sa njom, da svaka stranica ima tačno
+  jednu adresu.
+- Snimci primera u vodiču su u `public/assets/img/primeri/`. Kad se izgled
+  nekog primera promeni, napravite nove snimke (telefon, 540 × 1080, WebP) i
+  podignite `?v=` uz CSS ako se menja i stil.
 
 ## AI agent na sajtu
 

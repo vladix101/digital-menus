@@ -269,7 +269,10 @@ p { margin: 0; }
   .brand__name span { display: block; }
 }
 
-@media (min-width: 62rem) { .topnav { display: flex; } }
+/* Meni se prikaže tek kad stane u jedan red; na užem ekranu je dovoljno
+   dugme i telefon. */
+.topnav a { white-space: nowrap; }
+@media (min-width: 72rem) { .topnav { display: flex; } }
 
 .topbar__tel {
   display: none;
@@ -915,3 +918,11 @@ h1.eyebrow { font-family: var(--font-body); line-height: 1.5; }
 
 .prose .article__cta h2 { margin-top: 0; }
 .article__cta p { color: var(--text-2); }
+
+/* Snimci primera u vodiču — tri telefona u redu, i na uskom ekranu. */
+.shots { margin: 2rem 0; }
+.shots ul { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(.5rem, 2vw, 1rem); list-style: none; margin: 0; padding: 0 !important; }
+.shots li { margin: 0; }
+.shots img { width: 100%; height: auto; border: 1px solid var(--border); border-radius: 14px; transition: border-color var(--dur-hover) var(--ease-soft); }
+.shots a:hover img { border-color: var(--primary); }
+.shots figcaption { margin-top: .8rem; font-size: .82rem; color: var(--text-muted); }
