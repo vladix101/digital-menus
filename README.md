@@ -95,6 +95,11 @@ dodajte i njoj `?v=N` u referencama.
 - `public/sta-je-digitalni-meni/index.html` je vodič za informativne pretrage
   („šta je digitalni meni”, „kako napraviti digitalni meni”, „QR meni”).
   Naslovna i vodič se međusobno linkuju.
+- Tematske stranice, svaka za svoju grupu pretraga (da se ne bore međusobno):
+  `qr-meni-za-kafic/` (meni i cenovnik za kafić), `digitalni-meni-za-restoran/`
+  (jelovnik za restoran), `qr-meni-ili-pdf-meni/` (PDF meni, QR kôd za meni).
+  Sve imaju blok „Povezano” i iste linkove u podnožju; nova stranica se dodaje
+  u oba, u `sitemap.xml` i u `llms.txt`.
 - `public/llms.txt` je sažetak sajta za AI asistente (ChatGPT, Claude,
   Perplexity). Kad se promeni ponuda, kontakt ili primeri, izmenite i njega.
 - Pitanja u JSON-LD (`FAQPage`) moraju da budu ista kao vidljiva pitanja na

@@ -12,4 +12,19 @@
     <image:image><image:loc>https://digitalnimeniji.com/assets/img/primeri/digitalni-meni-trattoria-nona.webp</image:loc></image:image>
     <image:image><image:loc>https://digitalnimeniji.com/assets/img/primeri/digitalni-meni-zrno.webp</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://digitalnimeniji.com/qr-meni-za-kafic/</loc>
+    <lastmod>2026-11-25</lastmod>
+    <image:image><image:loc>https://digitalnimeniji.com/assets/img/primeri/digitalni-meni-basta21.webp</image:loc></image:image>
+    <image:image><image:loc>https://digitalnimeniji.com/assets/img/primeri/digitalni-meni-zrno.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://digitalnimeniji.com/digitalni-meni-za-restoran/</loc>
+    <lastmod>2026-11-25</lastmod>
+    <image:image><image:loc>https://digitalnimeniji.com/assets/img/primeri/digitalni-meni-trattoria-nona.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://digitalnimeniji.com/qr-meni-ili-pdf-meni/</loc>
+    <lastmod>2026-11-25</lastmod>
+  </url>
 </urlset>

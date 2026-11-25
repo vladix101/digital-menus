@@ -926,3 +926,16 @@ h1.eyebrow { font-family: var(--font-body); line-height: 1.5; }
 .shots img { width: 100%; height: auto; border: 1px solid var(--border); border-radius: 14px; transition: border-color var(--dur-hover) var(--ease-soft); }
 .shots a:hover img { border-color: var(--primary); }
 .shots figcaption { margin-top: .8rem; font-size: .82rem; color: var(--text-muted); }
+
+/* Jedan ili dva snimka ne razvlače se preko cele širine teksta. */
+.shots--1 ul { grid-template-columns: minmax(0, 15rem); }
+.shots--2 ul { grid-template-columns: repeat(2, minmax(0, 15rem)); }
+
+/* Povezani tekstovi na dnu tematskih stranica. */
+.related { margin-top: 3rem; }
+.prose .related h2 { font-size: .78rem; font-family: var(--font-body); letter-spacing: .18em; text-transform: uppercase; color: var(--text-muted); margin: 0 0 1rem; }
+.related ul { display: grid; gap: .75rem; list-style: none; padding: 0 !important; margin: 0; }
+@media (min-width: 40rem) { .related ul { grid-template-columns: repeat(3, 1fr); } }
+.related li { margin: 0; padding: 1rem 1.1rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+.related a { display: block; font-weight: 600; margin-bottom: .3rem; }
+.related span { display: block; font-size: .86rem; color: var(--text-muted); line-height: 1.5; }

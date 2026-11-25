@@ -8,6 +8,9 @@ Jezik sajta je srpski (latinica). Na ćirilici: Дигитални менији 
 
 - [Početna — digitalni meni za kafiće i restorane](https://digitalnimeniji.com/): usluga, kako radi, primeri, šta je uključeno, česta pitanja i kontakt
 - [Šta je digitalni meni i kako ga napraviti](https://digitalnimeniji.com/sta-je-digitalni-meni/): vodič za ugostitelje — definicija, poređenje sa PDF i štampanim menijem, šta meni treba da sadrži, pet koraka izrade, gde postaviti QR kôd, česte greške
+- [QR meni za kafić i bar](https://digitalnimeniji.com/qr-meni-za-kafic/): cenovnik pića na telefonu, šta ide u meni kafića, bašta, terasa i šank
+- [Digitalni meni za restoran](https://digitalnimeniji.com/digitalni-meni-za-restoran/): elektronski jelovnik sa opisima, gramažama, alergenima i vinskom kartom
+- [QR meni ili PDF meni](https://digitalnimeniji.com/qr-meni-ili-pdf-meni/): poređenje PDF menija i digitalnog menija, kada je PDF dovoljan, kako napraviti QR kôd za meni
 
 ## Šta je digitalni meni
 
